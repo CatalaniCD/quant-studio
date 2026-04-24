@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Quant101</title>
+	<link rel="stylesheet" href="tailwind.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script> 
+</head>
+<body class="bg-black text-white">
+
+	<!-- NAVIGATION - Apple style -->
+	<nav class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-lg border-b border-white/10">
+		<div class="max-w-6xl mx-auto px-8 py-5 flex items-center justify-between">
+			<a href="#" class="text-2xl font-semibold tracking-tighter">Claudio Catalani</a>
+			<div class="flex items-center gap-10 text-sm font-medium">
+				<a href="index.html" class="nav-link text-white/80 hover:text-white">Home</a>
+				<a href="services.html" class="nav-link text-white/80 hover:text-white">Services</a>
+				<a href="applications.html" class="nav-link text-white/80 hover:text-white">Applications</a>
+				<a href="perspectives.html" class="nav-link text-white/80 hover:text-white">Perspectives</a>
+			</div>
+		</div>
+	</nav>
+	
+	<section class="max-w-5xl mx-auto px-8 py-32 border-t border-white/10">
+	  <div class="pt-28 pb-20">
+	    <div class="max-w-4xl mx-auto px-8">
+	      <h1 class="section-title mb-4">Writing & Perspectives</h1>
+	      <p class="text-white/60 text-xl mb-16">Thoughts on technology, development, and design.</p>
+
+		<!-- Blog Post 1 -->
+		<div id="post1" class="post-card bg-zinc-950 border border-white/10 rounded-3xl overflow-hidden mb-12">
+		    <div class="p-10">
+		        <div class="text-white/50 text-sm mb-3">April 16, 2026 • 9 min read</div>
+		        <h2 class="text-3xl font-medium leading-tight mb-6">
+		            Why Technology Matters in Finance ?
+		        </h2>
+		        <p class="text-white/70 text-lg preview-text">
+		            From statistical arbitrage on mainframes to GPU-accelerated deep learning — 
+		            forty years of quant evolution, distilled into what actually survived, 
+		            and why the survivors all share the same answer.
+		        </p>
+
+		        <!-- Expand Button -->
+		        <button onclick="togglePost('post1')"
+		            class="mt-8 text-white/70 hover:text-white flex items-center gap-2 text-sm font-medium transition">
+		            Read full post <span id="parrow1" class="text-xl transition-transform">↓</span>
+		        </button>
+		    </div>
+
+		    <!-- Hidden Full Content -->
+		    <div id="pcontent1" class="hidden px-10 pb-10 article-content prose prose-invert max-w-none">
+
+		        <p class="text-white/70 text-lg preview-text">
+		            Technology isn't a tool in quantitative finance. It is the game. Markets now generate 
+		            terabytes of data every second. Human intuition cannot process it, cannot back-test it 
+		            rigorously, and cannot execute without delay or emotion. The machine forces a discipline 
+		            that discretionary trading never could — every assumption must be made explicit, every 
+		            signal must survive out-of-sample testing. That constraint is not a limitation. 
+		            It is the edge.
+		        </p>
+
+		        <!-- Image 1 -->
+		        <figure class="my-12">
+		            <img src="quant_timeline.jpg"
+		                 alt="Timeline of quant fund evolution from 1980 to 2022"
+		                 class="blog-image w-full rounded-3xl">
+		            <figcaption class="text-center text-white/50 text-sm mt-6">
+		                Four decades of systematic finance — each era defined by a technological leap
+		            </figcaption>
+		        </figure>
+
+		        <h2 class="text-2xl font-semibold mt-12 mb-6">The 1980s — When the Scientists Arrived</h2>
+		        <p class="text-white/70 text-lg preview-text">
+		            The era began with a simple observation: improving computing power, combined with 
+		            mathematical models, could find repeatable edges that discretionary traders missed 
+		            entirely. Jim Simons founded Renaissance Technologies in 1982. David Shaw launched 
+		            D.E. Shaw in 1988. Goldman, Morgan Stanley, and JP Morgan stood up dedicated quant 
+		            desks. The technology was modest by today's standards — basic 
+		            <strong>statistical arbitrage</strong>, early signal processing, and the first 
+		            automated execution systems. But the method was revolutionary. For the first time, 
+		            a trading decision required a proof, not an opinion.
+		        </p>
+
+		        <h2 class="text-2xl font-semibold mt-12 mb-6">The 1990s — Factor Models and Electronic Markets</h2>
+		        <p class="text-white/70 text-lg preview-text">
+		            The Fama-French three-factor model in 1992 gave equity quants a rigorous framework 
+		            for decomposing returns. Electronic trading platforms arrived. Markets decimalized. 
+		            Data feeds became digitized and machine-readable. Back-testing across thousands of 
+		            securities — previously a week of computation — became a morning task. 
+		            <strong>Cross-sectional factor models</strong> became the dominant architecture: 
+		            value, momentum, size, quality, expressed as systematic tilts across entire universes 
+		            of securities simultaneously.
+		        </p>
+
+		        <h2 class="text-2xl font-semibold mt-12 mb-6">2000s — The Golden Age, Then the Reckoning</h2>
+		        <p class="text-white/70 text-lg preview-text">
+		            Co-location put firm servers physically adjacent to exchange matching engines. 
+		            Microwave links cut execution latency from milliseconds to microseconds. 
+		            Algorithmic trading dominated equity volume. Then August 2007 arrived — the 
+		            <strong>Quant Quake</strong>. Crowded stat-arb strategies unwound simultaneously 
+		            as one large fund de-levered. Correlations that had been near zero became near one 
+		            overnight. Strategies that looked diversified in normal regimes were exposed as 
+		            structurally identical. The lesson was not that the models were wrong. 
+		            It was that <strong>liquidity risk and crowding</strong> were not in them.
+		        </p>
+
+		        <!-- Image 2 -->
+		        <figure class="my-12 mx-auto max-w-2xl">
+		            <img src="alt_data_pipeline.jpg"
+		                 alt="Alternative data pipeline feeding into a machine learning alpha model"
+		                 class="blog-image w-full rounded-3xl">
+		            <figcaption class="text-center text-white/50 text-sm mt-6">
+		                The 2010s shift: novel data sources replaced overcrowded price signals as the primary alpha engine
+		            </figcaption>
+		        </figure>
+
+		        <h2 class="text-2xl font-semibold mt-12 mb-6">2010s to 2022 — Machine Learning and the Alternative Data Era</h2>
+		        <p class="text-white/70 text-lg preview-text">
+		            Cheap cloud compute, GPUs, and open-source ML libraries restructured the research 
+		            pipeline entirely. Traditional price and volume signals had become commoditized — 
+		            too many firms running similar models on the same data. The new edge moved upstream, 
+		            into <strong>alternative data</strong>: satellite imagery of retail parking lots, 
+		            credit card transaction flows, NLP-parsed earnings call transcripts, shipping 
+		            manifests, web-scraped job postings. Gradient-boosted ensembles and, later, 
+		            deep learning architectures replaced linear factor regressions at the alpha layer. 
+		            The firms that adapted rebuilt their entire research platforms around these tools. 
+		            The firms that bolted ML onto legacy infrastructure got the worst of both worlds — 
+		            the complexity of nonlinear models with none of the signal quality.
+		        </p>
+
+		        <h2 class="text-2xl font-semibold mt-12 mb-6">Why the Survivors Survived</h2>
+		        <p class="text-white/70 text-lg preview-text">
+		            Renaissance Technologies, D.E. Shaw, Two Sigma, and AQR share a specific set of 
+		            traits that have nothing to do with model architecture and everything to do with 
+		            institutional discipline. They never stopped investing in faster infrastructure 
+		            and cleaner data pipelines. They built <strong>risk management into the 
+		            research process</strong>, not as a downstream filter but as a first-class 
+		            constraint. They hired scientists — physicists, mathematicians, computer scientists — 
+		            who treated markets as a noisy data problem to solve, not a narrative to interpret. 
+		            And critically, they maintained a culture where ideas had to survive brutal 
+		            out-of-sample testing before touching capital.
+		        </p>
+		        <p class="text-white/70 text-lg preview-text">
+		            The ones who disappeared — Long-Term Capital Management being the canonical example — 
+		            had brilliant models and catastrophic blind spots around <strong>liquidity, 
+		            leverage, and regime change</strong>. The math was correct. The assumptions were not.
+		        </p>
+
+		        <p class="mt-6 text-white/60 italic border-l-2 border-white/20 pl-6">
+		            Technology gave them the ability to find edges. Constant reinvention of that 
+		            technology, paired with intellectual honesty and risk discipline, is why they 
+		            are still running forty years later.
+		        </p>
+
+		        <!-- Tags -->
+		        <div class="mt-12 flex flex-wrap gap-3">
+		            <span class="px-5 py-2 bg-white/10 rounded-full text-sm">Quant History</span>
+		            <span class="px-5 py-2 bg-white/10 rounded-full text-sm">Statistical Arbitrage</span>
+		            <span class="px-5 py-2 bg-white/10 rounded-full text-sm">Factor Models</span>
+		            <span class="px-5 py-2 bg-white/10 rounded-full text-sm">Alternative Data</span>
+		            <span class="px-5 py-2 bg-white/10 rounded-full text-sm">Machine Learning</span>
+		            <span class="px-5 py-2 bg-white/10 rounded-full text-sm">Risk Management</span>
+		        </div>
+
+		    </div>
+		</div>
+		
+		<!-- Blog Post 2 -->
+		<div id="post2" class="post-card bg-zinc-950 border border-white/10 rounded-3xl overflow-hidden mb-12">
+			<div class="p-10">
+			  <div class="text-white/50 text-sm mb-3">April 9, 2026 • 10 min read</div>
+				  <h2 class="text-3xl font-medium leading-tight mb-6">Designing an exotic ETF</h2>
+				  <p class="text-white/70 text-lg preview-text">
+				    Short excerpt that appears initially. This teaser gives readers a taste of the full article...
+				  </p>
+		  
+		  		<!-- Expand Button -->
+				<button onclick="togglePost('post2')" 
+					class="mt-8 text-white/70 hover:text-white flex items-center gap-2 text-sm font-medium transition">
+				    Read full post <span id="arrow2" class="text-xl transition-transform">↓</span>
+				 </button>
+			</div>
+
+			<!-- Hidden Full Content -->
+			<div id="pcontent2" class="hidden px-10 pb-10 article-content prose prose-invert max-w-none">
+			  <p class="text-xl text-white/80 leading-relaxed mb-10">
+			    Exotic ETFs are niche, high-risk exchange-traded funds that track unconventional assets, strategies, or markets beyond traditional stocks and bonds. Unlike plain-vanilla index ETFs, they often use derivatives, leverage, or inverse strategies to provide specific, often short-term, hedging or speculative exposure. 
+				Key Aspects of Exotic ETFs:
+
+				    Types: Common types include commodity-linked funds, volatility-linked products (like VIX futures), and 2x or 3x leveraged or inverse ETFs.
+				    Structure: They frequently use synthetic replication, relying on swaps and derivatives to track performance rather than holding the underlying assets, as seen in some Invest in New Markets with Synthetic ETFs.
+				    Risk: These products often have higher expense ratios, lower liquidity, and significant path-dependency risks, meaning they are generally intended for active, sophisticated investors rather than long-term buy-and-hold strategies.
+				    Purpose: They provide access to niche strategies previously only available in hedge funds, such as targeting specific market anomalies, emerging sectors, or volatility, as discussed in The allure of exotic ETFs | The Asset.
+
+				Note: While exotic ETFs use derivatives, they should not be confused with Exotic Options vs. Traditional Options: Key Differences and ... (like What is an exotic option? - Ventura or Exotic Options: Meaning, Types, Examples & RBI Rules in India), which are a type of derivative contract, although the underlying strategies can be similar. 
+				For general education on standard, non-exotic ETFs, you can explore resources from Everything you need to know about ETFs - Saxo Bank. 
+			  </p>
+			  
+			  <!-- Image 1 -->
+			  <figure class="my-12">
+			    <img src="image1.jpg" 
+			         alt="Image description" 
+			         class="blog-image w-full rounded-3xl">
+			    <figcaption class="text-center text-white/50 text-sm mt-6">Caption for the first image</figcaption>
+			  </figure>
+			  
+			  <h2 class="text-2xl font-semibold mt-12 mb-6">Main Section Heading</h2>
+			  <p>The rest of your article content goes here. You can add multiple paragraphs, lists, quotes, etc.</p>
+			  
+			  <!-- Image 2 (optional) -->
+			  <figure class="my-12 mx-auto max-w-2xl">
+			    <img src="image1.png" 
+			         alt="Second image description" 
+			         class="blog-image w-full rounded-3xl">
+			    <figcaption class="text-center text-white/50 text-sm mt-6">Caption for the second image</figcaption>
+			  </figure>
+			  
+			  <p>Continue with more content as needed.</p>
+			</div>
+		</div>
+
+		<!-- Blog Post 3 -->
+		<div id="post3" class="post-card bg-zinc-950 border border-white/10 rounded-3xl overflow-hidden mb-12">
+		    <div class="p-10">
+		        <div class="text-white/50 text-sm mb-3">April 16, 2026 • 9 min read</div>
+		        <h2 class="text-3xl font-medium leading-tight mb-6">
+		            What is Algorithmic Trading?
+		        </h2>
+		        <p class="text-white/70 text-lg preview-text">
+		            A computer that never panics, never gets greedy, and never sleeps. 
+		            Algorithmic trading is not automation for its own sake — it is the 
+		            only architecture rigorous enough to operate at the speed and scale 
+		            modern markets demand.
+		        </p>
+
+		        <!-- Expand Button -->
+		        <button onclick="togglePost('post3')"
+		            class="mt-8 text-white/70 hover:text-white flex items-center gap-2 text-sm font-medium transition">
+		            Read full post <span id="parrow3" class="text-xl transition-transform">↓</span>
+		        </button>
+		    </div>
+
+		    <!-- Hidden Full Content -->
+		    <div id="pcontent3" class="hidden px-10 pb-10 article-content prose prose-invert max-w-none">
+
+		        <p class="text-xl text-white/80 leading-relaxed mb-10">
+		            Algorithmic trading is the process of using computer programs to make and execute 
+		            trading decisions according to a set of predefined, explicit rules. Instead of a 
+		            human watching screens and deciding in the moment whether to buy or sell based on 
+		            news, charts, or intuition — the computer follows logic that humans designed, 
+		            tested, and encoded in advance. Once live, it monitors markets continuously and 
+		            places trades automatically, with a speed, consistency, and scale that no 
+		            individual could match. The machine doesn't remove the human. It forces the human 
+		            to be precise about every assumption, long before any capital is at risk.
+		        </p>
+
+		        <!-- Image 1 -->
+		        <figure class="my-12">
+		            <img src="algo_trading_pipeline.jpg"
+		                 alt="Full algorithmic trading pipeline from signal generation to order execution"
+		                 class="blog-image w-full rounded-3xl">
+		            <figcaption class="text-center text-white/50 text-sm mt-6">
+		                The full pipeline: idea → signal → back-test → risk model → execution → live deployment
+		            </figcaption>
+		        </figure>
+
+		        <h2 class="text-2xl font-semibold mt-12 mb-6">Never Override the Computer</h2>
+		        <p class="text-sm">
+		            Jim Simons built Renaissance Technologies around a single discipline that most 
+		            firms claim to have and almost none actually maintain: <strong>complete adherence 
+		            to the model</strong>. His rule was unambiguous — once the algorithm signals a 
+		            trade, you follow it. No human steps in to say the trade looks wrong, feels 
+		            dangerous, or conflicts with the news cycle. Human intervention introduces 
+		            unpredictability into a system built on measurability. You cannot study, improve, 
+		            or trust a system that changes its behavior based on how someone feels that morning.
+		        </p>
+		        <p class="text-sm">
+		            Simons treated markets as a noisy signal-processing problem. The Medallion Fund 
+		            collected vast proprietary datasets and used statistical models to uncover 
+		            repeatable edges invisible to discretionary traders. The result was not a trading 
+		            firm. It was a scientific institution that happened to operate in financial markets.
+		        </p>
+
+		        <h2 class="text-2xl font-semibold mt-12 mb-6">Decisions Made Ahead of Time</h2>
+		        <p class="text-sm">
+		            The clearest way to understand algorithmic trading is through its contrast with 
+		            discretionary trading. In discretionary trading, a human makes real-time 
+		            decisions — reacting to news, reading charts, adjusting on instinct. In 
+		            algorithmic trading, all the important decisions — <strong>what to trade, when, 
+		            how much, and at what price</strong> — are resolved in advance by humans who 
+		            design and back-test the rules. The computer executes without needing approval 
+		            for each trade.
+		        </p>
+		        <p class="text-sm">
+		            This produces two distinct categories. <strong>Execution algorithms</strong> 
+		            handle how to trade — slicing large orders into smaller pieces, minimizing 
+		            market impact, adapting to real-time liquidity. <strong>Decision algorithms</strong> 
+		            go further: they determine what to trade, using mathematical alpha signals derived 
+		            from price, volume, sentiment, and alternative data. Most serious systematic funds 
+		            operate both layers simultaneously, with the execution layer invisible to the 
+		            alpha layer by design.
+		        </p>
+
+		        <!-- Image 2 -->
+		        <figure class="my-12 mx-auto max-w-2xl">
+		            <img src="discretionary_vs_systematic.jpg"
+		                 alt="Comparison diagram of discretionary versus systematic trading decision flow"
+		                 class="blog-image w-full rounded-3xl">
+		            <figcaption class="text-center text-white/50 text-sm mt-6">
+		                Discretionary trading reacts. Systematic trading executes a pre-verified thesis.
+		            </figcaption>
+		        </figure>
+
+		        <h2 class="text-2xl font-semibold mt-12 mb-6">The Encoding Requirement</h2>
+		        <p class="text-sm">
+		            A trading idea only qualifies as algorithmic if it can be made fully objective 
+		            and programmable. A rule like "buy when momentum looks strong" is not a strategy 
+		            — it is a description of a feeling. A rule like "buy the top-decile 
+		            <strong>12-1 month return</strong> within each GICS sector, rebalanced monthly, 
+		            with position size inversely proportional to realized volatility over the prior 
+		            60 days" is a strategy. Every assumption is explicit. Every parameter is testable. 
+		            The computer can execute it the same way at 3am on a Tuesday as it does at the 
+		            open on a Monday after a major macro event.
+		        </p>
+		        <p class="text-sm">
+		            This encoding requirement is not a technical constraint. It is an intellectual 
+		            discipline. It forces researchers to confront exactly where their thesis is vague, 
+		            where their back-test assumptions are optimistic, and where their transaction cost 
+		            model is lying to them. The strategies that survive live deployment are almost 
+		            always the ones that were most brutally stress-tested before they ever touched 
+		            real capital.
+		        </p>
+
+		        <h2 class="text-2xl font-semibold mt-12 mb-6">What Makes Them Fail</h2>
+		        <p class="text-sm">
+		            The advantages of algorithmic trading — speed, consistency, emotion removal, 
+		            scalability — are well understood. The failure modes are less discussed but more 
+		            important. <strong>Overfitting</strong> produces strategies that explain the past 
+		            and predict nothing. <strong>Crowding</strong> turns uncorrelated signals into 
+		            perfectly correlated exits during stress events. <strong>Regime change</strong> 
+		            makes a model trained in one market structure a liability in another. And 
+		            <strong>poor transaction cost modeling</strong> is the graveyard of strategies 
+		            that looked exceptional in back-test and bled slowly in production.
+		        </p>
+		        <p class="text-sm">
+		            The survivors — Renaissance, D.E. Shaw, Two Sigma — are not distinguished 
+		            by their choice of algorithm. They are distinguished by the rigor they apply 
+		            before the algorithm is ever deployed: obsessive data quality, walk-forward 
+		            validation, realistic cost assumptions, and a research culture where a strategy 
+		            must earn its place in the portfolio through evidence, not storytelling.
+		        </p>
+
+		        <p class="mt-6 text-white/60 italic border-l-2 border-white/20 pl-6">
+		            Algorithmic trading forces clarity. Every assumption must be made explicit, 
+		            because the computer will not figure it out for you. That constraint is 
+		            not the difficulty. It is the entire point.
+		        </p>
+
+		        <!-- Tags -->
+		        <div class="mt-12 flex flex-wrap gap-3">
+		            <span class="px-5 py-2 bg-white/10 rounded-full text-sm">Algorithmic Trading</span>
+		            <span class="px-5 py-2 bg-white/10 rounded-full text-sm">Systematic Strategies</span>
+		            <span class="px-5 py-2 bg-white/10 rounded-full text-sm">Execution Algorithms</span>
+		            <span class="px-5 py-2 bg-white/10 rounded-full text-sm">Alpha Models</span>
+		            <span class="px-5 py-2 bg-white/10 rounded-full text-sm">Back-testing</span>
+		            <span class="px-5 py-2 bg-white/10 rounded-full text-sm">Risk Management</span>
+		        </div>
+
+		    </div>
+		</div>
+
+		<!-- Blog Post 4 -->
+		<div id="post4" class="post-card bg-zinc-950 border border-white/10 rounded-3xl overflow-hidden mb-12">
+		    <div class="p-10">
+		        <div class="text-white/50 text-sm mb-3">April 16, 2026 • 11 min read</div>
+		        <h2 class="text-3xl font-medium leading-tight mb-6">
+		            Factors that Drive Returns
+		        </h2>
+		        <p class="text-white/70 text-lg preview-text">
+		            Beneath market noise lie systematic forces that explain why some assets 
+		            consistently outperform others. From a single beta to hundreds of signals — 
+		            the evolution of factor models is the intellectual backbone of every serious 
+		            quantitative fund.
+		        </p>
+
+		        <!-- Expand Button -->
+		        <button onclick="togglePost('post4')"
+		            class="mt-8 text-white/70 hover:text-white flex items-center gap-2 text-sm font-medium transition">
+		            Read full post <span id="parrow4" class="text-xl transition-transform">↓</span>
+		        </button>
+		    </div>
+
+		    <!-- Hidden Full Content -->
+		    <div id="pcontent4" class="hidden px-10 pb-10 article-content prose prose-invert max-w-none">
+
+		        <p class="text-xl text-white/80 leading-relaxed mb-10">
+		            One of the most fundamental questions in quantitative finance is also the most 
+		            practical: what actually drives asset returns? Markets are noisy, but beneath 
+		            the randomness lie <strong>systematic factors</strong> — measurable, persistent 
+		            influences that explain why certain securities outperform others across time 
+		            and geographies. Understanding these factors is not academic housekeeping. 
+		            It is the foundation of portfolio construction, risk decomposition, and alpha 
+		            generation in every serious systematic fund operating today.
+		        </p>
+
+		        <!-- Image 1 -->
+		        <figure class="my-12">
+		            <img src="factor_model_evolution.jpg"
+		                 alt="Evolution of factor models from CAPM to multi-factor frameworks"
+		                 class="blog-image w-full rounded-3xl">
+		            <figcaption class="text-center text-white/50 text-sm mt-6">
+		                From one factor to many — the intellectual lineage from CAPM to modern 
+		                machine-learned signal libraries
+		            </figcaption>
+		        </figure>
+
+		        <h2 class="text-2xl font-semibold mt-12 mb-6">
+		            CAPM — The Single-Factor Starting Point
+		        </h2>
+		        <p>
+		            Developed in the 1960s by Sharpe, Lintner, and Mossin, the 
+		            <strong>Capital Asset Pricing Model</strong> was the first equilibrium framework 
+		            to link expected return directly to risk in a systematic and testable way. Its 
+		            core insight: the only risk that deserves compensation is exposure to the overall 
+		            market. Idiosyncratic, stock-specific risk can be diversified away in a 
+		            well-constructed portfolio and should therefore earn nothing above the risk-free 
+		            rate.
+		        </p>
+		        <p class="mt-4">The CAPM pricing equation is:</p>
+
+		        <div class="my-8 px-6 py-5 bg-white/5 rounded-2xl overflow-x-auto text-center">
+		            \[
+		            E(R_i) = R_f + \beta_i \left( E(R_m) - R_f \right)
+		            \]
+		        </div>
+
+		        <p>Where:</p>
+		        <ul class="mt-4 space-y-2 text-white/70">
+		            <li>\( E(R_i) \) — expected return of asset \( i \)</li>
+		            <li>\( R_f \) — risk-free rate</li>
+		            <li>\( \beta_i \) — sensitivity of asset \( i \) to market movements</li>
+		            <li>\( E(R_m) - R_f \) — market risk premium</li>
+		        </ul>
+
+		        <p class="mt-6">Beta itself is defined as:</p>
+
+		        <div class="my-8 px-6 py-5 bg-white/5 rounded-2xl overflow-x-auto text-center">
+		            \[
+		            \beta_i = \frac{\text{Cov}(R_i,\, R_m)}{\text{Var}(R_m)}
+		            \]
+		        </div>
+
+		        <p>
+		            An asset with \( \beta = 1.5 \) is expected to earn the risk-free rate plus 
+		            1.5 times the market risk premium. An asset with \( \beta \approx 0 \) should 
+		            earn roughly the risk-free rate. CAPM gave quants the first rigorous, testable 
+		            method for separating market risk from genuine skill — and powered the rise of 
+		            index funds and beta-adjusted performance measurement. Every early quant shop, 
+		            including Renaissance and D.E. Shaw, began with CAPM-style thinking before 
+		            expanding far beyond it.
+		        </p>
+		        <p class="mt-4">
+		            The limitation was empirical. Small-cap stocks, value stocks, and momentum 
+		            stocks historically outperformed what their betas alone would predict. 
+		            One factor was not enough.
+		        </p>
+
+		        <h2 class="text-2xl font-semibold mt-12 mb-6">
+		            Multi-Factor Models — Going Beyond the Market
+		        </h2>
+		        <p>
+		            Once the evidence against CAPM accumulated, researchers built 
+		            <strong>multi-factor models</strong> — expressing an asset's return as a linear 
+		            combination of several systematic risk factors plus an idiosyncratic residual.
+		        </p>
+
+		        <div class="my-8 px-6 py-5 bg-white/5 rounded-2xl overflow-x-auto text-center">
+		            \[
+		            R_i = \alpha_i + \beta_{i1} F_1 + \beta_{i2} F_2 + \dots + \beta_{ik} F_k + \epsilon_i
+		            \]
+		        </div>
+
+		        <p>Where:</p>
+		        <ul class="mt-4 space-y-2 text-white/70">
+		            <li>\( \alpha_i \) — return not explained by any factor; the true measure of skill</li>
+		            <li>\( \beta_{ij} \) — exposure (loading) of asset \( i \) to factor \( j \)</li>
+		            <li>\( F_j \) — return of factor \( j \)</li>
+		            <li>\( \epsilon_i \) — idiosyncratic residual, \( E(\epsilon_i) = 0 \)</li>
+		        </ul>
+
+		        <p class="mt-6">
+		            The most influential empirical version is the 
+		            <strong>Fama-French three-factor model</strong> (1992), which added two 
+		            factors to CAPM:
+		        </p>
+
+		        <div class="my-8 px-6 py-5 bg-white/5 rounded-2xl overflow-x-auto text-center">
+		            \[
+		            R_i - R_f = \alpha_i + \beta_i (R_m - R_f) + s_i \cdot \text{SMB} 
+		            + h_i \cdot \text{HML} + \epsilon_i
+		            \]
+		        </div>
+
+		        <ul class="mt-4 space-y-2 text-white/70">
+		            <li>
+		                <strong>SMB</strong> (Small Minus Big) — captures the size premium: 
+		                small-cap stocks have historically outperformed large-cap stocks 
+		                on a risk-adjusted basis
+		            </li>
+		            <li>
+		                <strong>HML</strong> (High Minus Low) — captures the value premium: 
+		                stocks with high book-to-market ratios outperform those with low ratios
+		            </li>
+		        </ul>
+
+		        <p class="mt-6">
+		            Later extensions added momentum (Carhart four-factor), profitability, 
+		            investment, quality, and low-volatility. Today's state-of-the-art quant 
+		            models run dozens of factors simultaneously, sourced from price and volume 
+		            data, fundamental accounting, alternative datasets, and machine-learned 
+		            signals. The factor model became both the risk management framework and 
+		            the alpha generation engine — simultaneously telling a portfolio manager 
+		            what risks to hedge and where genuine edge might exist.
+		        </p>
+
+		        <!-- Image 2 -->
+		        <figure class="my-12 mx-auto max-w-2xl">
+		            <img src="fama_french_factors.jpg"
+		                 alt="Fama-French factor return decomposition across market, size, and value"
+		                 class="blog-image w-full rounded-3xl">
+		            <figcaption class="text-center text-white/50 text-sm mt-6">
+		                Return decomposition: separating market beta, size, and value exposures 
+		                from true alpha
+		            </figcaption>
+		        </figure>
+
+		        <h2 class="text-2xl font-semibold mt-12 mb-6">
+		            Arbitrage Pricing Theory — The No-Arbitrage Foundation
+		        </h2>
+		        <p>
+		            While Fama-French is empirical, <strong>Stephen Ross's Arbitrage Pricing 
+		            Theory</strong> (1976) provides the theoretical justification for why 
+		            multiple risk premia should exist at all. APT begins from a single 
+		            assumption: in a well-functioning market, there are no free lunches. 
+		            If two portfolios carry identical factor exposures but different expected 
+		            returns, investors will exploit that gap until it closes.
+		        </p>
+		        <p class="mt-4">The APT pricing equation is:</p>
+
+		        <div class="my-8 px-6 py-5 bg-white/5 rounded-2xl overflow-x-auto text-center">
+		            \[
+		            E(R_i) = R_f + \beta_{i1} \lambda_1 + \beta_{i2} \lambda_2 + \dots 
+		            + \beta_{ik} \lambda_k
+		            \]
+		        </div>
+
+		        <ul class="mt-4 space-y-2 text-white/70">
+		            <li>
+		                \( \lambda_j \) — the <strong>risk premium</strong> (price of risk) 
+		                associated with factor \( j \)
+		            </li>
+		        </ul>
+
+		        <p class="mt-6">
+		            Unlike CAPM, APT does not require the market portfolio to be mean-variance 
+		            efficient, nor does it assume investors optimize only over mean and variance. 
+		            It only requires that returns are generated by a linear factor structure and 
+		            that well-diversified portfolios carry no residual idiosyncratic risk. This 
+		            makes APT far more flexible: factors can be macroeconomic (inflation, interest 
+		            rates, industrial production), fundamental (value, size), statistical (principal 
+		            components extracted from the return covariance matrix), or alternative-data-driven.
+		        </p>
+		        <p class="mt-4">
+		            APT does not tell you which factors to use. It tells you what must be true 
+		            about any factor that is genuinely priced — and what happens to any manager 
+		            who thinks they have found alpha when they have merely found uncompensated 
+		            factor exposure.
+		        </p>
+
+		        <h2 class="text-2xl font-semibold mt-12 mb-6">
+		            Why This Is the Language of Every Quant Fund
+		        </h2>
+		        <p>
+		            Technology made factor models practical at scale. In the 1980s, estimating 
+		            a simple CAPM across a few hundred securities required serious computing 
+		            resources. By the 2010s, quants ran thousands of candidate factors across 
+		            millions of observations daily using cloud infrastructure, GPUs, and 
+		            distributed computing pipelines.
+		        </p>
+		        <p class="mt-4">
+		            The survivors — Renaissance, Two Sigma, AQR — share a specific research 
+		            discipline. They search continuously for new, orthogonal factors before 
+		            existing ones decay. They apply rigorous out-of-sample validation to avoid 
+		            the combinatorial overfitting that plagues naive factor research. And they 
+		            build execution systems that implement factor tilts at institutional scale 
+		            with transaction costs that don't consume the premium they are harvesting.
+		        </p>
+
+		        <p class="mt-6 text-white/60 italic border-l-2 border-white/20 pl-6">
+		            The edge today is not in knowing the models — every serious practitioner 
+		            knows them. It is in discovering new factors faster, with cleaner data and 
+		            more honest validation, than the competition can. Then executing them with 
+		            the discipline those models demand.
+		        </p>
+
+		        <!-- Tags -->
+		        <div class="mt-12 flex flex-wrap gap-3">
+		            <span class="px-5 py-2 bg-white/10 rounded-full text-sm">Factor Models</span>
+		            <span class="px-5 py-2 bg-white/10 rounded-full text-sm">CAPM</span>
+		            <span class="px-5 py-2 bg-white/10 rounded-full text-sm">Fama-French</span>
+		            <span class="px-5 py-2 bg-white/10 rounded-full text-sm">Arbitrage Pricing Theory</span>
+		            <span class="px-5 py-2 bg-white/10 rounded-full text-sm">Alpha vs Beta</span>
+		            <span class="px-5 py-2 bg-white/10 rounded-full text-sm">Portfolio Construction</span>
+		        </div>
+
+		    </div>
+		</div>
+
+		<!-- Blog Post 5 -->
+		<div id="post5" class="post-card bg-zinc-950 border border-white/10 rounded-3xl overflow-hidden mb-12">
+		    <div class="p-10">
+		        <div class="text-white/50 text-sm mb-3">April 16, 2026 • 8 min read</div>
+		        <h2 class="text-3xl font-medium leading-tight mb-6">What is a Black Box?</h2>
+		        <p class="text-white/70 text-lg preview-text">
+		            A Black Box is not magic, and it is not a mystery. It is a systematic decision engine — 
+		            one that wins or loses based on the quality of what you feed it, long before any model is trained.
+		        </p>
+
+		        <!-- Expand Button -->
+		        <button onclick="togglePost('post5')"
+		            class="mt-8 text-white/70 hover:text-white flex items-center gap-2 text-sm font-medium transition">
+		            Read full post <span id="arrow5" class="text-xl transition-transform">↓</span>
+		        </button>
+		    </div>
+
+		    <!-- Hidden Full Content -->
+		    <div id="pcontent5" class="hidden px-10 pb-10 article-content prose prose-invert max-w-none">
+
+		        <p class="text-xl text-white/80 leading-relaxed mb-12">
+		            In aerospace, a Black Box is a flight recorder. You don't open it unless something goes wrong. 
+		            Wall Street borrowed the term and applied it to a different kind of machine — one that ingests 
+		            market data, processes it through layers of mathematical logic, and outputs trading decisions 
+		            without a human reviewing the reasoning in between. The opacity is not the point. 
+		            The <em>discipline</em> is.
+		        </p>
+
+		        <!-- Image 1 -->
+		        <figure class="my-12 flex flex-col items-center">
+		            <img src="assets/blackbox_architecture.png"
+		                 alt="Diagram of a systematic trading strategy architecture"
+		                 class="blog-image w-full rounded-3xl"
+		                 style="width: 50%; height: auto;">
+		            <figcaption class="text-center text-white/50 text-sm mt-6">
+		                The four layers of a systematic strategy: alpha model, risk model, transaction cost model, portfolio construction
+		            </figcaption>
+		        </figure>
+
+		        <h2 class="text-2xl font-semibold mt-12 mb-6">What Lives Inside</h2>
+		        <p class="text-sm">
+		            Every systematic trading strategy — regardless of complexity — shares the same fundamental 
+		            architecture. There is an <strong>alpha model</strong>, which generates forecasts about future 
+		            price behavior. There is a <strong>risk model</strong>, which estimates how those positions 
+		            behave together under stress. There is a <strong>transaction cost model</strong>, which 
+		            calculates what execution actually costs versus what the backtest assumed. And there is a 
+		            <strong>portfolio construction engine</strong>, which translates forecasts into real position 
+		            sizes.
+		            Most practitioners focus on the alpha model. The firms that survive focus on all four equally.
+		        </p>
+
+		        <h2 class="text-2xl font-semibold mt-12 mb-6">Why Linearity Was Never Enough</h2>
+		        <p class="text-sm">
+		            Classical finance assumed that relationships between variables are proportional and stable. 
+		            Double the earnings surprise, double the return. These models were tractable, teachable, 
+		            and wrong in the specific ways that cost money — volatility clusters, correlations collapse 
+		            in crises, momentum reverses at regime boundaries.
+		        </p>
+		        <p class="text-sm">
+		            Machine learning doesn't assume a shape. It discovers one. A gradient-boosted ensemble can 
+		            learn that a momentum signal works in low-volatility trending regimes and destroys capital 
+		            in mean-reverting ones — a conditional relationship no linear model can express.
+		        </p>
+
+		        <!-- Image 2 -->
+		        <figure class="my-12 mx-auto max-w-2xl">
+		            <img src="assets/linear-fit.png"
+		                 alt="Comparison of linear model fit versus ML model fit on financial time series"
+		                 class="blog-image w-full rounded-3xl">
+		            <figcaption class="text-center text-white/50 text-sm mt-6">
+		                Linear models impose structure. Machine learning discovers it.
+		            </figcaption>
+		        </figure>
+
+		        <h2 class="text-2xl font-semibold mt-12 mb-6">Features Are the Real Strategy</h2>
+		        <p class="text-sm">
+		            Here is the insight that separates serious practitioners from enthusiastic ones: 
+		            the model is not the edge. <strong>The features are.</strong>
+		            A feature is a hypothesis encoded as a number. Earnings revision momentum, normalized 
+		            by analyst dispersion, lagged by one reporting cycle, is a theory about information 
+		            asymmetry in equity markets. A raw closing price is noise with a timestamp.
+		        </p>
+		        <p   class="text-sm">
+		            Firms that build durable systematic strategies spend most of their research time not 
+		            selecting algorithms, but constructing inputs derived from first principles — market 
+		            microstructure, behavioral finance, information flow theory. The Black Box learns 
+		            from data. The researcher decides what questions the data gets asked.
+		        </p>
+		        <p class="mt-6 text-white/60 italic border-l-2 border-white/20 pl-6">
+		            That decision is the entire job.
+		        </p>
+
+		        <!-- Tags -->
+		        <div class="mt-12 flex flex-wrap gap-3">
+		            <span class="px-5 py-2 bg-white/10 rounded-full text-sm">Systematic Trading</span>
+		            <span class="px-5 py-2 bg-white/10 rounded-full text-sm">Machine Learning</span>
+		            <span class="px-5 py-2 bg-white/10 rounded-full text-sm">Alpha Models</span>
+		            <span class="px-5 py-2 bg-white/10 rounded-full text-sm">Feature Engineering</span>
+		            <span class="px-5 py-2 bg-white/10 rounded-full text-sm">Quantitative Finance</span>
+		        </div>
+
+		    </div>
+		</div>
+
+	</section>
+
+	<!-- FOOTER -->
+	<footer class="border-t border-white/10 py-12 text-center text-sm text-white/40">
+		<div class="mt-5 flex justify-center gap-10 text-3xl mb-10">
+			<a href="https://github.com/CatalaniCD/" target="_blank" class="hover:text-white/70 transition"><i class="fab fa-github"></i></a>
+			<a href="https://www.linkedin.com/in/claudio-dami%C3%A1n-catalani-0bb814181/" target="_blank" class="hover:text-white/70 transition"><i class="fab fa-linkedin"></i></a>
+			<a href="https://x.com/peritusmachina" target="_blank" class="hover:text-white/70 transition"><i class="fab fa-x-twitter"></i></a>
+		</div>
+		© 2026 • Claudio Catalani • Personal Website 
+	</footer>
+
+  <script>
+   	// Toggle  Post
+	function togglePost(postId) {
+	  const post = document.getElementById(postId);
+	  const content = document.getElementById('pcontent' + postId.replace('post', ''));
+	  const arrow = document.getElementById('arrow' + postId.replace('post', ''));
+
+	  // console.log(content.classList)
+
+	  if (content.classList.contains('hidden')) {
+	    // Expand
+	    content.classList.remove('hidden');
+	    post.classList.add('expanded');
+	    arrow.style.transform = 'rotate(180deg)';
+	    // arrow.textContent = '↑';
+
+	  } else {
+	    // Collapse
+	    content.classList.add('hidden');
+	    post.classList.remove('expanded');
+	    arrow.style.transform = 'rotate(0deg)';
+	    // arrow.textContent = '↓';
+	  }
+
+	  // console.log(content.classList);
+	}
+
+	// Toggle Project
+	function toggleProject(projId) {
+	  const project = document.getElementById(projId);
+	  const content = document.getElementById('content' + projId.replace('proj', ''));
+	  const arrow = document.getElementById('arrow' + projId.replace('proj', ''));
+
+	  if (content.classList.contains('hidden')) {
+	    // Expand
+	    content.classList.remove('hidden');
+	    project.classList.add('expanded');
+	    arrow.style.transform = 'rotate(180deg)';
+	    // arrow.textContent = '↑';
+
+	  } else {
+	    // Collapse
+	    content.classList.add('hidden');
+	    project.classList.remove('expanded');
+	    arrow.style.transform = 'rotate(0deg)';
+	    // arrow.textContent = '↓';
+	  }
+	}
+  </script>
+</body>
+</html>
