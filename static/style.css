@@ -80,7 +80,7 @@ a[onclick]:not([href]) {cursor: pointer;}
 unloaded-script {display: none;}
 .site-wrapper {-webkit-overflow-scrolling: touch;align-items: center;display: flex;flex-direction: column;justify-content: center;min-height: var(--viewport-height);overflow: hidden;position: relative;z-index: 2;}
 .site-main {--alignment: center;--flex-alignment: center;--indent-left: 1;--indent-right: 1;--margin-left: auto;--margin-right: auto;--border-radius-tl: 0;--border-radius-tr: 0;--border-radius-br: 0;--border-radius-bl: 0;align-items: center;display: flex;flex-grow: 0;flex-shrink: 0;justify-content: center;max-width: 100%;position: relative;text-align: var(--alignment);z-index: 1;transition: opacity 1s ease 0s,transform 1s ease 0s;}
-.site-main > .inner {--padding-horizontal: 3rem;--padding-vertical: 4rem;--spacing: 0.75rem;--width: 48rem;border-radius: var(--border-radius-tl) var(--border-radius-tr) var(--border-radius-br) var(--border-radius-bl);max-width: 100%;position: relative;width: var(--width);z-index: 1;padding: var(--padding-vertical) var(--padding-horizontal);}
+.site-main > .inner {--padding-horizontal: 3rem;--padding-vertical: 2rem;--spacing: 0.75rem;--width: 64rem;border-radius: var(--border-radius-tl) var(--border-radius-tr) var(--border-radius-br) var(--border-radius-bl);max-width: 100%;position: relative;width: var(--width);z-index: 1;padding: var(--padding-vertical) var(--padding-horizontal);}
 .site-main > .inner > header {margin-bottom: var(--spacing);}
 .site-main > .inner > footer {margin-top: var(--spacing);}
 .site-main > .inner > * > * {margin-top: var(--spacing);margin-bottom: var(--spacing);}
