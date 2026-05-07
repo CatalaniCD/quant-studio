@@ -1,158 +1,377 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<!DOCTYPE HTML>
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Quant101</title>
-	<link rel="stylesheet" href="tailwind.css">
+	<title>QuantStudio</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<meta name="color-scheme" content="light only" />
+	<meta name="description" content="Quant-Studio" />
+	<meta property="og:site_name" content="Quant-Studio" />
+	<meta property="og:title" content="Quant-Studio" />
+	<meta property="og:type" content="website" />
+	<meta property="og:description" content="Quant-Studio" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta property="og:image:width" content="1280" />
+	<meta property="og:image:height" content="800" />
+	<link href="https://fonts.googleapis.com/css2?display=swap&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-	<link rel="stylesheet" href="style.css">
-	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script> 
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<noscript>
+		<style>
+			body {
+				overflow: auto !important;
+			}
+			body::after {
+				display: none !important;
+			}
+			.site-main > .inner {
+				opacity: 1.0 !important;
+			}
+			.site-main {
+				opacity: 1.0 !important;
+				transform: none !important;
+				transition: none !important;
+				filter: none !important;
+			}
+			.site-main > .inner > section {
+				opacity: 1.0 !important;
+				transform: none !important;
+				transition: none !important;
+				filter: none !important;
+			}
+		</style>
+	</noscript>
 </head>
-<body class="bg-black text-white">
+<body class="is-loading">
+	<div class="site-wrapper">
+		<div class="site-main">
+			<div class="inner">
 
-	<!-- NAVIGATION - Apple style -->
-	<nav class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-lg border-b border-white/10">
-		<div class="max-w-6xl mx-auto px-8 py-5 flex items-center justify-between">
-			<a href="#" class="text-2xl font-semibold tracking-tighter">Claudio Catalani</a>
-			<div class="flex items-center gap-10 text-sm font-medium">
-				<a href="index.html" class="nav-link text-white/80 hover:text-white">Home</a>
-				<a href="services.html" class="nav-link text-white/80 hover:text-white">Services</a>
-				<a href="applications.html" class="nav-link text-white/80 hover:text-white">Applications</a>
-				<a href="perspectives.html" class="nav-link text-white/80 hover:text-white">Perspectives</a>
-			</div>
-		</div>
-	</nav>
-
-	<!-- HERO -->
-	<section id="home" class="min-h-screen flex items-center pt-20">
-		<div class="max-w-5xl mx-auto px-8 text-center">
-			<h1 class="hero-text mb-8"> Claudio Catalani </h1>
-			<p class="max-w-2xl mx-auto text-2xl text-white/70 leading-tight">
-			I design and build data-driven robust solutions to real problems in finance.
-			</p>
-			<div class="mt-16 flex justify-center gap-6">
-				<a href="#about" 
-				   class="px-10 py-4 bg-white text-black rounded-full font-medium text-lg hover:bg-white/90 transition">
-				  Learn more about me
-				</a>
-				<a href="#projects" 
-				   class="px-10 py-4 border border-white/50 hover:border-white rounded-full font-medium text-lg transition">
-				  View projects
-				</a>
-			</div>
-		</div>
-	</section>
-
-	<!-- ABOUT -->
-	<section id="about" class="max-w-3xl mx-auto px-8 py-32 border-t border-white/10">
-		<div class="flex flex-col md:flex-row items-center gap-12">
-			<!-- Bio Text -->
-			<div class="flex-1">
-			  <h2 class="section-title mb-12">About</h2>
-			  <div class="prose prose-invert prose-lg text-white/80 leading-relaxed">
-			    <p class="text-xl">I'm a Quant Finance developer with 6 years of experience crafting high-quality applications and tools.</p>
-			  </div>
-			  <div class="prose prose-invert prose-lg max-w-none text-white/80 leading-relaxed">
-			  <p class="text-xl mt-8">
-			    Currently as a Freelancer. Previously at Upwork. Passionate about clean code, thoughtful interfaces, and building products people love to use.
-			  </p>
-			</div>
-			</div>
-			<!-- Circular Profile Photo -->
-			<div class="flex-shrink-0">
-			  <img src="assets/picture.png" alt="Claudio D. Catalani" class="w-48 h-48 rounded-full object-cover border border-white/20 shadow-2x1" style="filter: none !important;">
-			</div>
-		</div>
-	</section>
-
-	<!-- Bio -->
-	<section class="bg-zinc-950 py-32 border-t border-white/10" >
-		<div class="max-w-4xl mx-auto px-8">
-		<h2 class="section-title mb-16">Bio</h2>
-		<div class="space-y-12">
-			<p class="text-white/70 text-lg preview-text"> Bio goes here !</p>
-		</div>
-	</section>
-	
-	<!-- EDUCATION -->
-	<section id="education" class="bg-zinc-950 py-32 border-t border-white/10">
-		<div class="max-w-4xl mx-auto px-8">
-			<h2 class="section-title mb-16">Education</h2>
-			<div class="space-y-16">
-				<div>
-				  <div class="flex justify-between items-baseline">
-				    <h3 class="text-2xl font-semibold">Quantitative Finance</h3>
-				    <!-- <span class="text-white/50">2024 — Present</span> -->
-				  </div>
-					<a class="text-white/50 text-sm mb-3" href="https://oxford.credential.getsmarter.com/03bca522-8ae5-49ee-bacf-b1d270b1572c" target="_blank" rel="noopener">Oxford: Algorithmic Trading Programme</a><br>
-					<a class="text-white/50 text-sm mb-3" href="https://courses.edx.org/certificates/95c490b2889f4967aa704c36360ad14b" target="_blank" rel="noopener">MIT 15.455x: Mathematical Methods for Quantitative Finance</a><br>
-					<a class="text-white/50 text-sm mb-3" href="https://courses.edx.org/certificates/aab2491224e049f091d730e0cc55da71" target="_blank" rel="noopener">MIT 15.415.1x: Theory of Modern Finance I</a><br>
-					<a class="text-white/50 text-sm mb-3" href="https://courses.edx.org/certificates/79ec2c772f0c45a1ac565cf0eb3553cc" target="_blank" rel="noopener">MIT 15.415.2x: Theory of Modern Finance II</a><br>
-					<a class="text-white/50 text-sm mb-3" href="https://courses.edx.org/certificates/d103b21619db422c98ada4f21a1663bd" target="_blank" rel="noopener">MIT 6.86x: Machine Learning with Python</a><br>
-					<a class="text-white/50 text-sm mb-3" href="https://courses.edx.org/certificates/d103b21619db422c98ada4f21a1663bd" target="_blank" rel="noopener">MIT 6.431x: Probability - The Science of Uncertainty</a><br>
-					<a class="text-white/50 text-sm mb-3" href="https://courses.edx.org/certificates/954fcd5a9dba4339bdba1c3602cdb35f" target="_blank" rel="noopener">BAI003x: Reinforcement Learning</a><br>
-					<a class="text-white/50 text-sm mb-3" href="https://courses.edx.org/certificates/8251ab56baf74752a54aedef42f896ca" target="_blank" rel="noopener">ETFM2016x: Electronic Trading in Financial Markets</a><br>
-					<a class="text-white/50 text-sm mb-3" href="https://courses.edx.org/certificates/56884eed349043acbdab1aff8427eaa9" target="_blank" rel="noopener">CS198.1x: Bitcoin and Cryptocurrencies</a>
-				</div>
-				<div>
-				  <div class="flex justify-between items-baseline">
-				    <h3 class="text-2xl font-semibold">Computer Science</h3>
-				    <!-- <span class="text-white/50">2024 — Present</span> -->
-					  </div>
-						<a class="text-white/50 text-sm mb-3" href="https://courses.edx.org/certificates/15956df7497a4455825b60a6126267c6" target="_blank" rel="noopener">6.00.1x: Introduction to CS and Programming (Python)</a><br>
-						<a class="text-white/50 text-sm mb-3" href="https://courses.edx.org/certificates/2d96356d31074da29ffa0c5fc3eb193c" target="_blank" rel="noopener">6.00.2x: Computational Thinking and Data Science</a><br>
-						<a class="text-white/50 text-sm mb-3" href="https://courses.edx.org/certificates/df723fdc9e594a258896450cc1c084fe" target="_blank" rel="noopener">ALGS200x: Algorithmic Design and Techniques</a><br>
-						<a class="text-white/50 text-sm mb-3" href="https://courses.edx.org/certificates/a01572f3ebb2406abfec3e9f030240dc" target="_blank" rel="noopener">ALGS201x: Data Structures Fundamentals</a><br>
-						<a class="text-white/50 text-sm mb-3" href="https://courses.edx.org/certificates/8e4c59e53b9342eea5958b1751ec8ef1" target="_blank" rel="noopener">ALGS202x: Graph Algorithms</a><br>
-						<a class="text-white/50 text-sm mb-3" href="https://courses.edx.org/certificates/a7a7dcf6432d4ba1b9afb3fe34ca7855" target="_blank" rel="noopener">ALGS203x: Algorithms for NP-complete Problems</a><br>
-						<a class="text-white/50 text-sm mb-3" href="https://courses.edx.org/certificates/b5d51866efd54a328d28226fc32411e9" target="_blank" rel="noopener">NET04x: Advanced Algorithmics and Graph Theory</a><br>
-						<a class="text-white/50 text-sm mb-3" href="https://badges.parchment.com/public/assertions/Lp_1kREKRyasrVTSwW6FQg?identity__email=catalaniclaudiodamian@gmail.com" target="_blank" rel="noopener">CSE 330: Operating Systems</a><br>
-						<a class="text-white/50 text-sm mb-3" href="https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/3ce9e26d-1e8c-4788-ab18-67f06dffc66d-claudio-damian-catalani-ac704a22-e376-41b2-b17d-178755fa4203-certificate.pdf">LFW111: Introduction to Node.js</a><br>
-						<a class="text-white/50 text-sm mb-3" href="https://courses.edx.org/certificates/f36ec95889a643d1a4945a18aa7d0302">WEB1090: JavaScript Basics</a><br>
-						<a class="text-white/50 text-sm mb-3" href="https://courses.edx.org/certificates/4436c8476c344dd0b6264dc8d0f25090">WEB1093: Data Manipulation in JavaScript</a><br>
+				<!-- Home Sections -->
+				<section id="home-section">
+					<div id="container01" class="container-component instance-1 default">
+						<div class="wrapper">
+							<div class="inner">
+								
+								<h1 id="text03" class="text-component instance-3">Quant-Studio</h1>
+								<p id="text04" class="title-description">Systematic Research for Independent Practitioners</p>
+								<p id="text04" class="text-component instance-4">Latest Update: April 24th 2026</p>
+								<!-- <div id="image01" class="image-component instance-2 full">
+									<span class="frame">
+										<img src="screen03.png" alt="" />
+									</span>
+								</div> -->
+								<hr>
+								<ul id="buttons06" class="buttons-component instance-6">
+									<li><a href="#about" class="n01" role="button">About</a></li>
+									<li><a href="#products" class="n02" role="button">Products</a></li>
+									<li><a href="#method" class="n02" role="button">Methods</a></li>
+									<li><a href="#disclaimer" class="n02" role="button">Disclaimer</a></li>
+									<li><a href="#contact" class="n03" role="button">Contact</a></li>
+								</ul>
+								<br>
+							</div>
+						</div>
 					</div>
-				<div>
-				  <div class="flex justify-between items-baseline">
-				    <h3 class="text-2xl font-semibold">Naval Degree • Argentinian Navy</h3>
-				  </div>
-					<p class="text-white/50 text-sm mb-3">Commissioned officer training, weapons systems, high-pressure environments.
-					<br>Mathematics: Calculus I & II • Algebra I & II • Linear Algebra • Differential Equations
-					<br>Engineering: Thermodynamics • Naval Architecture • Digital Electronics • Materials Science
-					<br>Applied Physics: Physics I, II & III (Mechanics, Electromagnetism, Waves) • Ballistics
-					<br>Systems & Operations: Navigation Systems • Weapons Systems • Control Engineering
-					<br>Leadership & Risk: High-Pressure Decision Making • Psychology • Crisis Management
-					</p>
-				</div>
+				</section>
+
+				<!-- About Section -->
+				<section id="about-section">
+					<div id="container03" class="container-component instance-3 default">
+						<div class="wrapper">
+							<div class="inner">
+								<div id="image01" class="image-component instance-2 full">
+									<span class="frame deferred"><img data-src="assets/methods02.png" alt="" /></span>
+								</div>
+								<ul id="buttons02" class="buttons-component instance-2">
+									<li><a href="index.html" class="n01" role="button">← Back</a></li>
+								</ul>
+								<h2 id="text05" class="text-component instance-5">About Us</h2>
+								<hr>
+
+								<p class="paragraph-title">Who Produces the Research?</p>
+								<p id="text10" class="text-component instance-10">
+								    My name is Claudio Catalani. I am an independent quantitative researcher and software engineer based in Argentina, working with practitioners worldwide.<br><br>
+								    
+								    I founded Quant Studio after more than six years of intensive, first-principles research and systems development. With a strong foundation in mathematics and physics, complemented by MIT MicroMasters in Finance and Data Science, I develop systematic research frameworks for financial markets.
+								</p>
+
+								<p class="paragraph-title">Our Philosophy</p>
+								<p id="text10" class="text-component instance-10">
+								    Quant Studio exists at the intersection of academic rigor and real-time market reality. We transform complex market narratives into structured, transparent, and defensible analysis using probability, stochastic modeling, machine learning, and computational finance.<br><br>
+								    
+								    This is not another content platform. There are no AI-generated summaries or repackaged ideas. Every report is built from verified public data, reproducible code, and rigorously tested quantitative frameworks.
+								</p>
+
+								<p class="paragraph-title">Our Commitment</p>
+								<p id="text10" class="text-component instance-10">
+								    I operate with full independence and zero conflicts of interest. My goal is simple: deliver high-quality, systematic research that independent market participants and analysts can trust and verify themselves.
+								</p>
+								
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Methods Section -->
+				<section id="method-section">
+					<div id="container04" class="container-component instance-4 default">
+						<div class="wrapper">
+							<div class="inner">
+								<!-- Section Image -->
+								<div id="image03" class="image-component instance-4 full">
+									<span class="frame deferred"><img data-src="assets/methods01.png" alt="" /></span>
+								</div>
+
+								<!-- Section Content -->
+								<ul id="buttons04" class="buttons-component instance-4">
+								<li><a href="#home" class="n01" role="button">← Back</a></li></ul>
+								<h2 id="text07" class="text-component instance-7">Our Methods</h2>
+								<hr>
+
+								<div id="text09" class="text-component instance-9">
+
+									<span class="p">
+										We deliver a structured interpretation of market complexity by operating at the intersection of academic rigor and real-time information. Raw data is transformed into consistent, defensible insights on prevailing market narratives.
+									</span><br>
+
+									<p class="paragraph-title">Methodologies</p>
+
+									<span class="p">
+										The publications integrate asset pricing, derivatives pricing, machine learning, and computational finance methods — including probability distributions, time-series and stochastic models, Monte Carlo simulation, multi-factor frameworks, portfolio theory, neural networks, ensembles, and robust techniques for generalization and overfitting mitigation.
+									</span><br>
+
+									<p class="paragraph-title">Publications Standards</p>
+									<span class="p">
+										<strong>Conflict of Interest:</strong> The author has no personal positions, holdings, or financial interests in any of the assets, commodities, or securities discussed in this report and declares no conflicts of interest.<br>
+										<strong>Independence:</strong> All research is produced free from external commercial influence, ensuring complete objectivity and integrity of the analysis and scorecards.<br>
+										<strong>Disclaimer:</strong> This report includes a standard disclaimer and does not constitute financial advice, investment recommendations, or performance guarantees.<br>
+										<strong>Methodological Summary:</strong> Each publication provides a high-level explanation of the core methodology and logic (e.g., conditional probability frameworks such as : P(X_t+1 | X_t) ).
+									</span><br>
+
+									<p class="paragraph-title">Data Quality & Sourcing</p>
+									<span class="p">
+										All research is built exclusively on verified public data. We maintain that trustworthy quantitative analysis requires data that is accessible and reproducible by the public.
+									</span>
+									<span class="p">
+										<strong>Primary Sources:</strong><br>
+										Market Data: OHLCV prices sourced via documented APIs from high-quality providers including EODHD, Yahoo Finance, and Binance.<br>
+										Macro Indicators: Economic data (yield curves, inflation, GDP, etc.) sourced from the Federal Reserve Economic Data (FRED) – St. Louis Fed.	
+									</span>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Disclaimer Section -->
+				<section id="disclaimer-section">
+					<div id="container04" class="container-component instance-4 default">
+						<div class="wrapper">
+							<div class="inner">
+								<ul id="buttons04" class="buttons-component instance-4">
+								<li><a href="#home" class="n01" role="button">← Back</a></li></ul>
+								<h2 id="text07" class="text-component instance-7">Diligence, Disclosure & Limitation of Liability</h2>
+								<hr>
+								<div id="text09" class="text-component instance-9">
+									<span class="p">
+										This project provides independent, data-driven analysis of financial markets, including but not limited to cryptocurrencies, macroeconomic trends, and commodities. All content is produced using quantitative methods, statistical models, and publicly available information.
+									</span><br>
+
+									<p class="paragraph-title">No Financial Advice</p>
+									<span class="p">
+										The information contained in this website and in any associated reports is for informational and educational purposes only. It does not constitute financial, investment, legal, or tax advice. Nothing presented should be interpreted as a recommendation to buy, sell, or hold any financial instrument or asset.
+									</span><br>
+									
+									<p class="paragraph-title">Probabilistic Nature of Analysis</p>
+									<span class="p">
+										All models, forecasts, and conclusions are based on probabilistic frameworks and are inherently uncertain. Financial markets are complex, adaptive systems subject to unforeseen events, structural breaks, and regime changes. As such, no outcome is guaranteed, and past performance or model accuracy does not imply future results.
+									</span><br>
+									
+									<p class="paragraph-title">Assumptions and Data Limitations</p>
+									<span class="p">
+										The analysis relies on historical data, model assumptions, and external data sources that may contain inaccuracies, delays, or revisions. While reasonable efforts are made to ensure data quality and methodological rigor, no representation or warranty is made regarding completeness or accuracy.
+									</span><br>
+
+									<p class="paragraph-title">User Responsibility</p>
+									<span class="p">
+										Any decisions made based on this information are the sole responsibility of the user. Users are encouraged to conduct their own independent research and, where appropriate, consult with licensed financial professionals before making investment decisions.
+									</span><br>
+
+									<p class="paragraph-title">No Liability</p>
+									<span class="p">
+										Under no circumstances shall the author or provider of this content be liable for any direct or indirect losses, damages, or consequences arising from the use of, or reliance on, any information presented in this project, including but not limited to financial losses.
+									</span><br>
+
+									<p class="paragraph-title">No Fiduciary Relationship</p>
+									<span class="p">
+										Use of this content does not establish any fiduciary, advisory, or client relationship between the user and the content provider.
+									</span><br>
+
+									<p class="paragraph-title">Forward-Looking Statements</p>
+									<span class="p">
+										Some content may include forward-looking statements or projections. These are based on current expectations and are subject to change without notice. Actual outcomes may differ materially.
+									</span><br>
+
+									<p class="paragraph-title">Jurisdiction</p>
+									<span class="p">
+										This content is intended for a general audience and may not comply with specific regulatory requirements in all jurisdictions. Users are responsible for ensuring compliance with their local laws and regulations.
+									</span><br>
+
+									<span class="p">
+										By accessing or purchasing any content from this project, you acknowledge and agree to the terms outlined in this statement.
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Products Section -->
+				<section id="products-section">
+						<div id="container04" class="container-component instance-4 default">
+							<div class="wrapper">
+								<div class="inner">
+
+								<!-- Section Image -->
+								<div id="image04" class="image-component instance-4 full">
+									<span class="frame deferred">
+										<img src="" data-src="assets/screen01.png" alt="" />
+									</span>
+								</div>
+								<ul id="buttons04" class="buttons-component instance-4">
+									<li><a href="#home" class="n01" role="button">← Back</a></li>
+								</ul>
+
+								<!-- Section Content -->
+								<h2 id="text07" class="text-component instance-7">Latest Reports</h2>
+
+								<!-- Sample Report -->
+								<!-- <span class="text-component instance-4"><a href="#">Sample Report</a></span> -->
+								<hr>
+
+							<!-- PRODUCTS -->
+				        	<div id="post1" class="post-card">
+							    <div class="post-card-inner">
+							        <div class="report-date">April 29, 2026</div>
+							        
+							        <div class="report-meta-row">
+							            <span class="credential-tag">QS-01</span>
+							            <span class="asset-tag">$OIL</span>
+							        </div>
+
+							        <h2 class="report-title">
+							            The Narrative Gap<br>2026 Supply Shock
+							        </h2>
+
+							        <p class="preview-text">
+							        	<a href="report_template.html">Details</a>
+							      
+							        </p>
+
+							        <div style="display: grid;grid-template-columns: 1fr auto;">
+								      	<span class="buttons-component instance-2">
+						                	<li><a href="https://your-store.com/buy-1">Purchase</a></li>
+										</span>
+										<span class="report-cost">$30</span>
+									</div>
+
+									<hr>
+				                    <div class="disclaimer">
+						                <p>
+										    Informational use only. Not financial advice. By purchasing, you agree to the Disclaimer below.
+										</p>
+					                </div>
+							    </div>
+							</div>
+
+							<hr>
+
+				        	<div class="disclaimer">
+				        		<p>
+				        		<strong>Diligence, Disclosure & Limitation of Liability</strong>
+				        		<br>
+								This project provides independent, data-driven analysis of financial markets, including but not limited to cryptocurrencies, macroeconomic trends, and commodities. All content is produced using quantitative methods, statistical models, and publicly available information.
+								<br>
+								<strong>No Financial Advice:</strong> The information contained in this website and in any associated reports is for informational and educational purposes only. It does not constitute financial, investment, legal, or tax advice. Nothing presented should be interpreted as a recommendation to buy, sell, or hold any financial instrument or asset.
+								<br>
+								<strong>Probabilistic Nature of Analysis:</strong> All models, forecasts, and conclusions are based on probabilistic frameworks and are inherently uncertain. Financial markets are complex, adaptive systems subject to unforeseen events, structural breaks, and regime changes. As such, no outcome is guaranteed, and past performance or model accuracy does not imply future results.
+								<br>
+								<strong>Assumptions and Data Limitations:</strong> The analysis relies on historical data, model assumptions, and external data sources that may contain inaccuracies, delays, or revisions. While reasonable efforts are made to ensure data quality and methodological rigor, no representation or warranty is made regarding completeness or accuracy.
+								<br>
+								<strong>User Responsibility:</strong> Any decisions made based on this information are the sole responsibility of the user. Users are encouraged to conduct their own independent research and, where appropriate, consult with licensed financial professionals before making investment decisions.
+								<br>
+								<strong>No Liability:</strong> Under no circumstances shall the author or provider of this content be liable for any direct or indirect losses, damages, or consequences arising from the use of, or reliance on, any information presented in this project, including but not limited to financial losses.
+								<br>
+								<strong>No Fiduciary Relationship:</strong> Use of this content does not establish any fiduciary, advisory, or client relationship between the user and the content provider.
+								<br>
+								<strong>Forward-Looking Statements:</strong> Some content may include forward-looking statements or projections. These are based on current expectations and are subject to change without notice. Actual outcomes may differ materially.
+								<br>
+								<strong>Jurisdiction:</strong> This content is intended for a general audience and may not comply with specific regulatory requirements in all jurisdictions. Users are responsible for ensuring compliance with their local laws and regulations.
+								<br>
+								By accessing or purchasing any content from this project, you acknowledge and agree to the terms outlined in this statement. 
+								</p>
+				        	</div>
+						</div>
+					</div>
+				</section>
+	
+				<section id="contact-section">
+					<div id="container05" class="container-component instance-5 default">
+						<div class="wrapper">
+							<div class="inner">
+								<ul id="buttons05" class="buttons-component instance-5">
+									<li><a href="#home" class="n01" role="button">← Back</a></li>
+								</ul><h2 id="text01" class="text-component instance-1">Contact Us</h2>
+								<hr>
+								<p id="text06" class="text-component instance-6">
+									  Research questions. Purchase issues.<br>
+									  Institutional and consulting inquiries.<br>
+									  Custom report requests.<br>
+								</p>
+
+								<div class="footer-socials">
+						         <!--    <a href="https://github.com/CatalaniCD/" target="_blank" class="footer-icon">
+						                <i class="fab fa-github"></i>
+						            </a> -->
+									<a href="mailto:catalaniclaudiodamian@gmail.com" class="footer-icon" aria-label="Email Me">
+									    <i class="fa-solid fa-envelope"></i>
+									</a>
+						            <a href="https://www.linkedin.com/in/claudio-dami%C3%A1n-catalani-0bb814181/" target="_blank" class="footer-icon">
+						                <i class="fab fa-linkedin"></i>
+						            </a>
+						            <a href="https://x.com/peritusmachina" target="_blank" class="footer-icon">
+									    <i class="fab fa-x-twitter"></i>
+									</a>
+									<a href="YOUR_CALENDLY_LINK" target="_blank" class="footer-icon" aria-label="Calendly">
+									    <i class="fa-solid fa-calendar-check"></i>
+									</a>
+						        </div>
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Concact Done Section -->
+				<section id="contact-done-section">
+					<div id="container02" class="container-component instance-2 default">
+						<div class="wrapper">
+							<div class="inner">
+								<h2 id="text02" class="text-component instance-2">Thank You</h2>
+								<p id="text08" class="text-component instance-8">Aliquam erat volutpat. Praesent urna nisi quam. Integer sollicitudin magna.</p>
+								<ul id="buttons01" class="buttons-component instance-1">
+									<li><a href="#contact" class="n01" role="button">← Back</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</section>
+
 			</div>
 		</div>
-	</section>
-
-
-	<!-- CONTACT -->
-	<section id="contact" class="max-w-3xl mx-auto px-8 py-32 border-t border-white/10 text-center">
-		<h2 class="section-title mb-8">Let's talk</h2>
-
-			<p class="text-2xl text-white/70 max-w-md mx-auto">
-			I'm always interested in new opportunities and interesting conversations.
-			</p>
-
-			<a href="mailto:catalaniclaudiodamian@email.com" 
-			class="mt-16 inline-block px-12 py-6 border border-white/40 hover:border-white text-2xl font-medium rounded-3xl transition">
-			catalaniclaudiodamian@email.com
-			</a>
-
-	</section>
-
-	<!-- FOOTER -->
-	<footer class="border-t border-white/10 py-12 text-center text-sm text-white/40">
-		<div class="mt-5 flex justify-center gap-10 text-3xl mb-10">
-			<a href="https://github.com/CatalaniCD/" target="_blank" class="hover:text-white/70 transition"><i class="fab fa-github"></i></a>
-			<a href="https://www.linkedin.com/in/claudio-dami%C3%A1n-catalani-0bb814181/" target="_blank" class="hover:text-white/70 transition"><i class="fab fa-linkedin"></i></a>
-			<a href="https://x.com/peritusmachina" target="_blank" class="hover:text-white/70 transition"><i class="fab fa-x-twitter"></i></a>
-		</div>
-		© 2026 • Claudio Catalani • Personal Website 
-	</footer>
-
+	</div>
+	<script src="script.js"></script>
 </body>
 </html>
