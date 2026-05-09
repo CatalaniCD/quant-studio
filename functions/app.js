@@ -11,17 +11,5 @@ app.get('/', (req, res) => {
     res.sendFile(path.resolve('static/index.html'));
 });
 
-app.get('/applications', (req, res) => {
-    res.sendFile(path.resolve('static/applications.html'));
-});
-
-app.get('/consulting', (req, res) => {
-    res.sendFile(path.resolve('static/consulting.html'));
-});
-
-app.get('/perspectives', (req, res) => {
-    res.sendFile(path.resolve('static/perspectives.html'));
-});
-
 export default httpServerHandler(app);
 
