@@ -120,6 +120,12 @@ body.is-instant::after {display: none !important;transition: none !important;}
 .image-component.instance-4:not(:last-child) {margin-bottom: 2.25rem !important;}
 .image-component.instance-4 > .frame {width: 100vw;transition: none;}
 .image-component.instance-4 > .frame > img {transition: none;}
+.image-component.instance-2 > .frame {
+    width: 100%;            /* Ensure it fills the container width */
+    max-height: 300px;      /* Adjust this value (e.g., 250px to 400px) to your liking */
+    overflow: hidden;
+    display: block;
+}
 .text-component {direction: var(--site-language-direction);position: relative;}
 .text-component span.p {display: block;position: relative;}
 .text-component span[style], .text-component strong, .text-component a, .text-component code, .text-component mark, .text-component spoiler-text {-webkit-text-fill-color: currentcolor;}
@@ -434,8 +440,9 @@ body.is-instant::after {display: none !important;transition: none !important;}
 @media (max-width: 1920px) {}
 @media (max-width: 1680px) {html {font-size: 13pt;}}
 @media (max-width: 1280px) {html {font-size: 13pt;}}
-@media (max-width: 1024px) {}@media (max-width: 980px) {html {font-size: 11pt;}}
-@media (max-width: 736px) {html {font-size: 11pt;}
+@media (max-width: 1024px) {}
+@media (max-width: 980px) {html {font-size: 11pt;}}
+@media (max-width: 768px) {html {font-size: 11pt;}
 	.site-main > .inner {--padding-horizontal: 1rem;--padding-vertical: 1.5rem;--spacing: 0.75rem;}
 	.site-main > .inner > * > .full {margin-left: calc(-1rem);max-width: calc(100% + 2rem + 0.4725px);width: calc(100% + 2rem + 0.4725px);}
 	.site-main > .inner > * > .full.screen {margin-left: -50vw;}
