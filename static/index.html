@@ -1,375 +1,1126 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>QuantStudio</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width,initial-scale=1" />
-	<meta name="color-scheme" content="light only" />
-	<meta name="description" content="Quant-Studio" />
-	<meta property="og:site_name" content="Quant-Studio" />
-	<meta property="og:title" content="Quant-Studio" />
-	<meta property="og:type" content="website" />
-	<meta property="og:description" content="Quant-Studio" />
-	<meta property="og:image:type" content="image/jpeg" />
-	<meta property="og:image:width" content="1280" />
-	<meta property="og:image:height" content="800" />
-	<link href="https://fonts.googleapis.com/css2?display=swap&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600" rel="stylesheet" type="text/css" />
+	<title>Claudio Catalani — Quant Studio</title>
+	<meta charset="utf-8">
+	<meta content="width=device-width,initial-scale=1" name="viewport">
+	<meta content="light only" name="color-scheme">
+	<meta content="Claudio Catalani — Quant Studio property="og:site_name">
+	<meta content="Claudio Catalani — Quant Studio" property="og:title">
+	<meta content="website" property="og:type">
+	<meta content="AI-augmented quantitative research & techology consulting for professional traders, crypto funds, and systematic trading operations." property="og:description">
+	<link href="https://fonts.googleapis.com/css2?display=swap&family=Source+Sans+Pro:ital,wght@0,200;0,600;1,200;1,600" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- Extended styles: ticker, segment pills, service cards, pain grid — all harmonized with the existing CSS system -->
+	<style>
+		/* ── SEGMENT PILLS ── */
+		.seg-pills {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 0.5rem;
+			margin-top: 1rem !important;
+			margin-bottom: 1rem !important;
+		}
+		.pill {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.55em;
+			font-weight: 600;
+			letter-spacing: 0.18rem;
+			text-transform: uppercase;
+			color: #474747;
+			border: 1px solid #CCCCCC;
+			padding: 0.25rem 0.75rem;
+			display: inline-flex;
+			align-items: center;
+			gap: 0.4rem;
+			text-decoration: none;
+		}
+		.pill .dot {
+			width: 5px; height: 5px;
+			border-radius: 50%;
+			flex-shrink: 0;
+		}
+		.pill.quant .dot { background: #C9A84C; }
+		.pill.crypto .dot { background: #309EDB; }
+		.pill.prop .dot { background: #2a9d6e; }
+		.pill.family .dot { background: #e07b39; }
+
+		/* ── SECTION LABEL (eyebrow) ── */
+		.section-eyebrow {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.55em;
+			font-weight: 600;
+			letter-spacing: 0.3rem;
+			text-transform: uppercase;
+			color: #999;
+			margin-bottom: 0.5rem !important;
+			display: flex;
+			align-items: center;
+			gap: 0.6rem;
+		}
+		.section-eyebrow::before {
+			content: '';
+			display: inline-block;
+			width: 18px; height: 1px;
+			background: #CCCCCC;
+		}
+
+		/* ── WHO CARDS ── */
+		.who-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 1px;
+			background: #CCCCCC;
+			border: 1px solid #CCCCCC;
+			margin-top: 1.25rem !important;
+			margin-bottom: 1.25rem !important;
+		}
+		@media (max-width: 600px) { .who-grid { grid-template-columns: 1fr; } }
+		.who-card {
+			background: #fff;
+			padding: 1.25rem;
+			position: relative;
+		}
+		.who-card::before {
+			content: '';
+			position: absolute;
+			top: 0; left: 0; right: 0;
+			height: 2px;
+		}
+		.who-card.c1::before { background: #C9A84C; }
+		.who-card.c2::before { background: #309EDB; }
+		.who-card.c3::before { background: #2a9d6e; }
+		.who-card.c4::before { background: #e07b39; }
+		.who-name {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.75em;
+			font-weight: 600;
+			letter-spacing: 0.18rem;
+			text-transform: uppercase;
+			color: #474747;
+			margin-bottom: 0.6rem;
+		}
+		.who-desc {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.88em;
+			font-weight: 300;
+			color: #474747;
+			line-height: 1.75;
+			margin-bottom: 0.75rem;
+		}
+		.who-pains {
+			list-style: none;
+			display: flex;
+			flex-direction: column;
+			gap: 0.3rem;
+			font-weight: 300;
+		}
+		.who-pains li {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.65em;
+			font-weight: 500;
+			ccolor: #474747;
+			letter-spacing: 0.02rem;
+			display: flex;
+			align-items: margin-left;
+			gap: 0.4rem;
+			line-height: 1.5;
+		}
+		.who-pains li::before { content: '→'; color: #CCCCCC; flex-shrink: 0; }
+
+		/* ── PROOF CARDS ── */
+		.proof-grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 1px;
+			background: #CCCCCC;
+			border: 1px solid #CCCCCC;
+			margin-top: 1.25rem !important;
+			margin-bottom: 1.25rem !important;
+		}
+		@media (max-width: 700px) { .proof-grid { grid-template-columns: 1fr; } }
+		.proof-card {
+			background: #ffffff;
+			padding: 1.25rem;
+		}
+		.proof-tag {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.55em;
+			font-weight: 600;
+			letter-spacing: 0.15rem;
+			text-transform: uppercase;
+			color: #999;
+			margin-bottom: 0.75rem;
+			display: flex;
+			align-items: center;
+			gap: 0.4rem;
+		}
+		.proof-tag::before {
+			content: '';
+			width: 5px; height: 5px;
+			border-radius: 50%;
+			background: #2a9d6e;
+			flex-shrink: 0;
+		}
+		.proof-metric {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 2.2em;
+			font-weight: 200;
+			color: #474747;
+			line-height: 1;
+			margin-bottom: 0.5rem;
+		}
+		.proof-desc {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.75em;
+			font-weight: 200;
+			color: #474747;
+			line-height: 1.75;
+			margin-bottom: 0.5rem;
+		}
+		.proof-ctx {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.55em;
+			font-weight: 600;
+			color: #999;
+			letter-spacing: 0.1rem;
+		}
+
+		/* ── PAIN GRID ── */
+		.pain-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 1px;
+			background: #CCCCCC;
+			border: 1px solid #CCCCCC;
+			margin-top: 1.25rem !important;
+			margin-bottom: 1.25rem !important;
+		}
+		@media (max-width: 600px) { .pain-grid { grid-template-columns: 1fr; } }
+		.pain-item {
+			background: #fff;
+			padding: 1.25rem;
+			display: flex;
+			gap: 1rem;
+			align-items: flex-start;
+		}
+		.pain-num {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 1.8em;
+			font-weight: 500;
+			color: #CCCCCC;
+			line-height: 1;
+			flex-shrink: 0;
+			min-width: 2rem;
+		}
+		.pain-title {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.72em;
+			font-weight: 500;
+			letter-spacing: 0.1rem;
+			text-transform: uppercase;
+			color: #474747;
+			margin-bottom: 0.4rem;
+		}
+		.pain-body {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.75em;
+			font-weight: 400;
+			color: #666;
+			line-height: 1.75;
+			margin-bottom: 0.4rem;
+		}
+		.pain-badge {
+			display: inline-block;
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.5em;
+			font-weight: 500;
+			letter-spacing: 0.15rem;
+			text-transform: uppercase;
+			color: #999;
+			border: 1px solid #CCCCCC;
+			padding: 0.15rem 0.5rem;
+		}
+
+		/* ── SERVICE CARDS ── */
+		.svc-grid {
+			display: flex;
+			flex-direction: column;
+			gap: 1px;
+			background: #CCCCCC;
+			border: 1px solid #CCCCCC;
+			margin-top: 1.25rem !important;
+			margin-bottom: 1.25rem !important;
+		}
+		.svc-card {
+			background: #fff;
+			padding: 1.5rem;
+			position: relative;
+			overflow: hidden;
+		}
+		.svc-card::before {
+			content: '';
+			position: absolute;
+			left: 0; top: 0; bottom: 0;
+			width: 2px;
+			background: #CCCCCC;
+			transition: background 0.2s;
+		}
+		.svc-card:hover::before { background: #C9A84C; }
+		.svc-card.feat { background: #fafff8; }
+		.svc-card.feat::before { background: #2a9d6e; }
+		.svc-tier {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.55em;
+			font-weight: 600;
+			letter-spacing: 0.2rem;
+			text-transform: uppercase;
+			color: #999;
+			margin-bottom: 0.4rem;
+		}
+		.svc-badge-pop {
+			display: inline-block;
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.85em;
+			font-weight: 600;
+			letter-spacing: 0.1rem;
+			color: #2a9d6e;
+			border: 1px solid #2a9d6e;
+			padding: 0.1rem 0.4rem;
+			margin-left: 0.5rem;
+			vertical-align: middle;
+		}
+		.svc-name {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 1em;
+			font-weight: 600;
+			letter-spacing: 0.25rem;
+			text-transform: uppercase;
+			color: #474747;
+			margin-bottom: 0.3rem;
+		}
+		.svc-price {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.7em;
+			font-weight: 600;
+			letter-spacing: 0.1rem;
+			color: #C9A84C;
+			margin-bottom: 0.2rem;
+		}
+		.svc-time {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.6em;
+			font-weight: 200;
+			letter-spacing: 0.1rem;
+			color: #474747;
+			margin-bottom: 0.75rem;
+		}
+		.svc-segs {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.35rem;
+			margin-bottom: 1rem;
+		}
+		.svc-seg {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.5em;
+			font-weight: 600;
+			letter-spacing: 0.15rem;
+			text-transform: uppercase;
+			color: #999;
+			border: 1px solid #CCCCCC;
+			padding: 0.15rem 0.5rem;
+		}
+		.svc-seg.cy { border-color: #309EDB; color: #309EDB; }
+		.svc-seg.gd { border-color: #C9A84C; color: #C9A84C; }
+		.svc-seg.gr { border-color: #2a9d6e; color: #2a9d6e; }
+		.svc-body {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.80em;
+			font-weight: 400;
+			color: #474747;
+			line-height: 1.8;
+			margin-bottom: 1rem;
+		}
+		.svc-list {
+			list-style: none;
+			display: flex;
+			flex-direction: column;
+			gap: 0.3rem;
+		}
+		.svc-list li {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.72em;
+			font-weight: 400;
+			color: #474747;
+			display: flex;
+			align-items: flex-start;
+			gap: 0.5rem;
+			line-height: 1.5;
+		}
+		.svc-list li::before { content: '—'; color: #474747; flex-shrink: 0; font-size: 0.85em; margin-top: 1px; }
+
+		/* ── PROCESS STEPS ── */
+		.proc-grid {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 1px;
+			background: #CCCCCC;
+			border: 1px solid #CCCCCC;
+			margin-top: 1.25rem !important;
+			margin-bottom: 1.25rem !important;
+		}
+		@media (max-width: 700px) { .proc-grid { grid-template-columns: 1fr 1fr; } }
+		@media (max-width: 440px) { .proc-grid { grid-template-columns: 1fr; } }
+		.proc-step {
+			background: #fff;
+			padding: 1.25rem;
+		}
+		.proc-num {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 2.2em;
+			font-weight: 200;
+			color: #e8e8e8;
+			line-height: 1;
+			margin-bottom: 0.75rem;
+		}
+		.proc-title {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.7em;
+			font-weight: 600;
+			letter-spacing: 0.15rem;
+			text-transform: uppercase;
+			color: #474747;
+			margin-bottom: 0.4rem;
+		}
+		.proc-desc {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.7em;
+			font-weight: 200;
+			color: #888;
+			line-height: 1.7;
+		}
+
+		/* ── POSITIONING GRID ── */
+		.pos-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 1px;
+			background: #CCCCCC;
+			border: 1px solid #CCCCCC;
+			margin-top: 1.25rem !important;
+			margin-bottom: 1.25rem !important;
+		}
+		@media (max-width: 600px) { .pos-grid { grid-template-columns: 1fr; } }
+		.pos-col { background: #fff; padding: 1.25rem; }
+		.pos-col.right { background: #fafff8; }
+		.pos-label {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.6em;
+			font-weight: 600;
+			letter-spacing: 0.2rem;
+			text-transform: uppercase;
+			margin-bottom: 1rem;
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+		}
+		.pos-col.left .pos-label  { color: #c0392b; }
+		.pos-col.right .pos-label { color: #2a9d6e; }
+		.pos-label::before { content: ''; width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+		.pos-col.left .pos-label::before  { background: #c0392b; }
+		.pos-col.right .pos-label::before { background: #2a9d6e; }
+		.pos-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+		.pos-list li {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.72em;
+			font-weight: 200;
+			color: #666;
+			padding: 0.6rem 0;
+			border-bottom: 1px solid #EEEEEE;
+			display: flex;
+			align-items: center;
+			gap: 0.6rem;
+			line-height: 1.4;
+		}
+		.pos-list li:last-child { border-bottom: none; }
+		.pos-col.left .pos-list li::before  { content: '✕'; font-size: 0.85em; color: #c0392b; opacity: 0.6; flex-shrink: 0; }
+		.pos-col.right .pos-list li::before { content: '✓'; font-size: 0.85em; color: #2a9d6e; flex-shrink: 0; }
+
+		/* ── CONTACT DETAIL ROWS ── */
+		.cdet {
+			display: flex;
+			flex-direction: column;
+			gap: 0;
+			margin-top: 1rem;
+			border: 1px solid #CCCCCC;
+		}
+		.cdet-row {
+			display: flex;
+			align-items: flex-start;
+			gap: 0.75rem;
+			padding: 0.6rem 0.75rem;
+			border-bottom: 1px solid #EEEEEE;
+		}
+		.cdet-row:last-child { border-bottom: none; }
+		.cdet-key {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.55em;
+			font-weight: 600;
+			letter-spacing: 0.15rem;
+			text-transform: uppercase;
+			color: #474747;
+			flex-shrink: 0;
+			width: 5.5rem;
+			padding-top: 0.1rem;
+		}
+		.cdet-val {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.55em;
+			font-weight: 500;
+			color: #474747;
+			line-height: 1.5;
+		}
+		.cdet-val a { color: #474747; text-decoration: none; }
+		.cdet-val a:hover { text-decoration: underline; }
+
+		/* ── STAT ROW ── */
+		.stat-row {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 0;
+			border: 1px solid #CCCCCC;
+			margin-top: 1.25rem !important;
+			margin-bottom: 1.25rem !important;
+			background: #CCCCCC;
+		}
+		.stat-item {
+			background: #fafafa;
+			flex: 1;
+			min-width: 8rem;
+			padding: 1rem 0.75rem;
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			gap: 0.3rem;
+		}
+		.stat-val {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 1.6em;
+			font-weight: 200;
+			color: #474747;
+			line-height: 1;
+		}
+		.stat-lbl {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.5em;
+			font-weight: 600;
+			letter-spacing: 0.18rem;
+			text-transform: uppercase;
+			color: #999;
+		}
+
+		/* ── STACK GRID ── */
+		.stack-grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 1px;
+			background: #CCCCCC;
+			border: 1px solid #CCCCCC;
+			margin-top: 0.75rem !important;
+		}
+		.stack-item {
+			background: #fafafa;
+			padding: 0.6rem 0.5rem;
+			text-align: center;
+		}
+		.stack-name {
+			font-family: 'Source Santos Pro', sans-serif;
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.6em;
+			font-weight: 600;
+			letter-spacing: 0.1rem;
+			color: #474747;
+		}
+		.stack-cat {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.5em;
+			font-weight: 200;
+			color: #999;
+			margin-top: 0.15rem;
+		}
+
+		/* ── PHILOSOPHY LIST ── */
+		.phil-list { display: flex; flex-direction: column; gap: 0; margin-top: 0.75rem; text-align: left; }
+		.phil-item {
+			display: flex;
+			gap: 0.75rem;
+			align-items: flex-start;
+			text-align: left;
+			padding: 0.85rem 0;
+			border-bottom: 1px solid #EEEEEE;
+		}
+		.phil-item:last-child { border-bottom: none; }
+		.phil-num {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.55em;
+			font-weight: 600;
+			color: #474747;
+			letter-spacing: 0.1rem;
+			flex-shrink: 0;
+			padding-top: 0.15rem;
+			text-align: left;
+		}
+		.phil-title {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.88em;
+			font-weight: 600;
+			color: #474747;
+			text-align: left;
+			margin-bottom: 0.25rem;
+
+		}
+		.phil-body {
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.82em;
+			font-weight: 500;
+			color: #474747;
+			line-height: 1.85;
+			text-align: left;
+		}
+
+		/* ── NOTE BOX ── */
+		.note-box {
+			border: 1px solid #CCCCCC;
+			padding: 1rem 1.25rem;
+			background: #fafafa;
+			margin-top: 0.75rem !important;
+			margin-bottom: 0.75rem !important;
+			font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: 0.72em;
+			font-weight: 300;
+			color: #666;
+			line-height: 1.8;
+		}
+
+		/* ── PROFILE IMAGE OVERRIDE — larger, not circular ── */
+		.image-component.instance-hero > .frame {
+			width: 10rem !important;
+			border-radius: 50% !important;
+		}
+	</style>
+
 	<noscript>
-		<style>
-			body {
-				overflow: auto !important;
-			}
-			body::after {
-				display: none !important;
-			}
-			.site-main > .inner {
-				opacity: 1.0 !important;
-			}
-			.site-main {
-				opacity: 1.0 !important;
-				transform: none !important;
-				transition: none !important;
-				filter: none !important;
-			}
-			.site-main > .inner > section {
-				opacity: 1.0 !important;
-				transform: none !important;
-				transition: none !important;
-				filter: none !important;
-			}
-		</style>
+		<style>body{overflow:auto!important}.site-main{opacity:1!important;transform:none!important;transition:none!important;filter:none!important}.site-main>.inner>section{opacity:1!important;transform:none!important;transition:none!important;filter:none!important}</style>
 	</noscript>
 </head>
 <body class="is-loading">
-	<div class="site-wrapper">
-		<div class="site-main">
-			<div class="inner">
 
-				<!-- Home Sections -->
-				<section id="home-section">
-					<div id="container01" class="container-component instance-1 default">
-						<div class="wrapper">
-							<div class="inner">
-								
-								<h1 id="text03" class="text-component instance-3">Quant Studio</h1>
-								<p id="text04" class="title-description">Systematic Research for Independent Practitioners</p>
-								<p id="text04" class="text-component instance-4">Latest Update: April 24th 2026</p>
-								<!-- <div id="image01" class="image-component instance-2 full">
-									<span class="frame">
-										<img src="screen03.png" alt="" />
-									</span>
-								</div> -->
-								<hr>
-								<ul id="buttons06" class="buttons-component instance-6">
-									<li><a href="#about" class="n01" role="button">About</a></li>
-									<li><a href="https://contra.com/claudio_catalani_quant/products" class="n02" role="button">Products</a></li>
-									<li><a href="#method" class="n02" role="button">Methods</a></li>
-								</ul>
-								<ul id="buttons06" class="buttons-component instance-6">
-									<li><a href="#disclaimer" class="n02" role="button">Disclaimer</a></li>
-									<li><a href="#contact" class="n03" role="button">Contact</a></li>
-								</ul>
-								<br>
-							</div>
-						</div>
-					</div>
-				</section>
+<div class="site-wrapper">
+<div class="site-main">
+<div class="inner">
 
-				<!-- About Section -->
-				<section id="about-section">
-					<div id="container03" class="container-component instance-3 default">
-						<div class="wrapper">
-							<div class="inner">
-								<div id="image01" class="image-component instance-2 full">
-									<span class="frame deferred"><img data-src="assets/methods02.png" alt="" /></span>
-								</div>
-								<ul id="buttons02" class="buttons-component instance-2">
-									<li><a href="index.html" class="n01" role="button">← Back</a></li>
-								</ul>
-								<h2 id="text05" class="text-component instance-5">About Us</h2>
-								<hr>
+<!-- ═══════════════ HEADER / NAV ═══════════════ -->
+<header id="header">
+	<ul class="buttons-component instance-1" id="buttons01">
+		<li><a href="#home"     role="button">Home</a></li>
+		<li><a href="#who"      role="button">Who</a></li>
+		<li><a href="#services" role="button">Services</a></li>
+		<li><a href="#about"    role="button">About</a></li>
+		<li><a href="#contact"  role="button">Contact</a></li>
+	</ul>
+	<!-- <p class="text-component instance-4" id="text04">Quantitative Finance Solutions</p> -->
+	<hr class="divider-component instance-1" id="divider01">
+</header>
 
-								<p class="paragraph-title">Who Produces the Research?</p>
-								<p id="text10" class="text-component instance-10">
-								    My name is Claudio Catalani. I am an independent quantitative researcher and software engineer based in Argentina, working with practitioners worldwide.<br><br>
-								    
-								    I founded Quant Studio after more than six years of intensive, first-principles research and systems development. With a strong foundation in mathematics and physics, complemented by MIT MicroMasters in Finance and Data Science, I develop systematic research frameworks for financial markets.
-								</p>
+<!-- ═══════════════ HOME ═══════════════ -->
+<section id="home-section">
 
-								<p class="paragraph-title">Our Philosophy</p>
-								<p id="text10" class="text-component instance-10">
-								    Quant Studio exists at the intersection of academic rigor and real-time market reality. We transform complex market narratives into structured, transparent, and defensible analysis using probability, stochastic modeling, machine learning, and computational finance.<br><br>
-								    
-								    This is not another content platform. There are no AI-generated summaries or repackaged ideas. Every report is built from verified public data, reproducible code, and rigorously tested quantitative frameworks.
-								</p>
+	<div class="image-component instance-1 instance-hero" id="image01">
+		<span class="frame">
+			<img alt="Quant Studio Logo" src="logo.png">
+		</span>
+	</div>
 
-								<p class="paragraph-title">Our Commitment</p>
-								<p id="text10" class="text-component instance-10">
-								    I operate with full independence and zero conflicts of interest. My goal is simple: deliver high-quality, systematic research that independent market participants and analysts can trust and verify themselves.
-								</p>
-								
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<!-- Methods Section -->
-				<section id="method-section">
-					<div id="container04" class="container-component instance-4 default">
-						<div class="wrapper">
-							<div class="inner">
-								<!-- Section Image -->
-								<div id="image03" class="image-component instance-4 full">
-									<span class="frame deferred"><img data-src="assets/methods01.png" alt="" /></span>
-								</div>
-
-								<!-- Section Content -->
-								<ul id="buttons04" class="buttons-component instance-4">
-								<li><a href="#home" class="n01" role="button">← Back</a></li></ul>
-								<h2 id="text07" class="text-component instance-7">Our Methods</h2>
-								<hr>
-
-								<div id="text09" class="text-component instance-9">
-
-									<span class="p">
-										We deliver a structured interpretation of market complexity by operating at the intersection of academic rigor and real-time information. Raw data is transformed into consistent, defensible insights on prevailing market narratives.
-									</span><br>
-
-									<p class="paragraph-title">Methodologies</p>
-
-									<span class="p">
-										The publications integrate asset pricing, derivatives pricing, machine learning, and computational finance methods — including probability distributions, time-series and stochastic models, Monte Carlo simulation, multi-factor frameworks, portfolio theory, neural networks, ensembles, and robust techniques for generalization and overfitting mitigation.
-									</span><br>
-
-									<p class="paragraph-title">Publications Standards</p>
-									<span class="p">
-										<strong>Conflict of Interest:</strong> The author has no personal positions, holdings, or financial interests in any of the assets, commodities, or securities discussed in this report and declares no conflicts of interest.<br>
-										<strong>Independence:</strong> All research is produced free from external commercial influence, ensuring complete objectivity and integrity of the analysis and scorecards.<br>
-										<strong>Disclaimer:</strong> This report includes a standard disclaimer and does not constitute financial advice, investment recommendations, or performance guarantees.<br>
-										<strong>Methodological Summary:</strong> Each publication provides a high-level explanation of the core methodology and logic (e.g., conditional probability frameworks).
-									</span><br>
-
-									<p class="paragraph-title">Data Quality & Sourcing</p>
-									<span class="p">
-										All research is built exclusively on verified public data. We maintain that trustworthy quantitative analysis requires data that is accessible and reproducible by the public.
-									</span>
-									<span class="p">
-										<strong>Primary Sources:</strong><br>
-										Market Data: OHLCV prices sourced via documented APIs from high-quality providers including EODHD, Yahoo Finance, and Binance.<br>
-										Macro Indicators: Economic data (yield curves, inflation, GDP, etc.) sourced from the Federal Reserve Economic Data (FRED) – St. Louis Fed.	
-									</span>
-								</div>
-								
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<!-- Disclaimer Section -->
-				<section id="disclaimer-section">
-					<div id="container04" class="container-component instance-4 default">
-						<div class="wrapper">
-							<div class="inner">
-								<ul id="buttons04" class="buttons-component instance-4">
-								<li><a href="#home" class="n01" role="button">← Back</a></li></ul>
-								<h2 id="text07" class="text-component instance-7">Diligence, Disclosure & Limitation of Liability</h2>
-								<hr>
-								<div id="text09" class="text-component instance-9">
-									<span class="p">
-										This project provides independent, data-driven analysis of financial markets, including but not limited to cryptocurrencies, macroeconomic trends, and commodities. All content is produced using quantitative methods, statistical models, and publicly available information.
-									</span><br>
-
-									<p class="paragraph-title">No Financial Advice</p>
-									<span class="p">
-										The information contained in this website and in any associated reports is for informational and educational purposes only. It does not constitute financial, investment, legal, or tax advice. Nothing presented should be interpreted as a recommendation to buy, sell, or hold any financial instrument or asset.
-									</span><br>
-									
-									<p class="paragraph-title">Probabilistic Nature of Analysis</p>
-									<span class="p">
-										All models, forecasts, and conclusions are based on probabilistic frameworks and are inherently uncertain. Financial markets are complex, adaptive systems subject to unforeseen events, structural breaks, and regime changes. As such, no outcome is guaranteed, and past performance or model accuracy does not imply future results.
-									</span><br>
-									
-									<p class="paragraph-title">Assumptions and Data Limitations</p>
-									<span class="p">
-										The analysis relies on historical data, model assumptions, and external data sources that may contain inaccuracies, delays, or revisions. While reasonable efforts are made to ensure data quality and methodological rigor, no representation or warranty is made regarding completeness or accuracy.
-									</span><br>
-
-									<p class="paragraph-title">User Responsibility</p>
-									<span class="p">
-										Any decisions made based on this information are the sole responsibility of the user. Users are encouraged to conduct their own independent research and, where appropriate, consult with licensed financial professionals before making investment decisions.
-									</span><br>
-
-									<p class="paragraph-title">No Liability</p>
-									<span class="p">
-										Under no circumstances shall the author or provider of this content be liable for any direct or indirect losses, damages, or consequences arising from the use of, or reliance on, any information presented in this project, including but not limited to financial losses.
-									</span><br>
-
-									<p class="paragraph-title">No Fiduciary Relationship</p>
-									<span class="p">
-										Use of this content does not establish any fiduciary, advisory, or client relationship between the user and the content provider.
-									</span><br>
-
-									<p class="paragraph-title">Forward-Looking Statements</p>
-									<span class="p">
-										Some content may include forward-looking statements or projections. These are based on current expectations and are subject to change without notice. Actual outcomes may differ materially.
-									</span><br>
-
-									<p class="paragraph-title">Jurisdiction</p>
-									<span class="p">
-										This content is intended for a general audience and may not comply with specific regulatory requirements in all jurisdictions. Users are responsible for ensuring compliance with their local laws and regulations.
-									</span><br>
-
-									<span class="p">
-										By accessing or purchasing any content from this project, you acknowledge and agree to the terms outlined in this statement.
-									</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<!-- Products Section -->
-				<section id="products-section">
-						<div id="container04" class="container-component instance-4 default">
-							<div class="wrapper">
-								<div class="inner">
-
-								<!-- Section Image -->
-								<div id="image04" class="image-component instance-4 full">
-									<span class="frame deferred">
-										<img src="" data-src="assets/screen01.png" alt="" />
-									</span>
-								</div>
-								<ul id="buttons04" class="buttons-component instance-4">
-									<li><a href="#home" class="n01" role="button">← Back</a></li>
-								</ul>
-
-								<!-- Section Content -->
-								<h2 id="text07" class="text-component instance-7">Latest Reports</h2>
-
-								<!-- Sample Report -->
-								<!-- <span class="text-component instance-4"><a href="#">Sample Report</a></span> -->
-								<hr>
-
-							<!-- PRODUCTS -->
-				        	<div id="post1" class="post-card">
-							    <div class="post-card-inner">
-							        <div class="report-date">April 29, 2026</div>
-							        
-							        <div class="report-meta-row">
-							            <span class="credential-tag">QS-01</span>
-							            <span class="asset-tag">$OIL</span>
-							        </div>
-
-							        <h2 class="report-title">
-							            The Narrative Gap<br>2026 Supply Shock
-							        </h2>
-
-							        <p class="preview-text">
-							        	<a href="report_template.html">Details</a>
-							      
-							        </p>
-
-							        <div style="display: grid;grid-template-columns: 1fr auto;">
-								      	<span class="buttons-component instance-2">
-						                	<li><a href="https://your-store.com/buy-1">Purchase</a></li>
-										</span>
-										<span class="report-cost">$30</span>
-									</div>
-
-									<hr>
-				                    <div class="disclaimer">
-						                <p>
-										    Informational use only. Not financial advice. By purchasing, you agree to the Disclaimer below.
-										</p>
-					                </div>
-							    </div>
-							</div>
-
-							<hr>
-
-				        	<div class="disclaimer">
-				        		<p>
-				        		<strong>Diligence, Disclosure & Limitation of Liability</strong>
-				        		<br>
-								This project provides independent, data-driven analysis of financial markets, including but not limited to cryptocurrencies, macroeconomic trends, and commodities. All content is produced using quantitative methods, statistical models, and publicly available information.
-								<br>
-								<strong>No Financial Advice:</strong> The information contained in this website and in any associated reports is for informational and educational purposes only. It does not constitute financial, investment, legal, or tax advice. Nothing presented should be interpreted as a recommendation to buy, sell, or hold any financial instrument or asset.
-								<br>
-								<strong>Probabilistic Nature of Analysis:</strong> All models, forecasts, and conclusions are based on probabilistic frameworks and are inherently uncertain. Financial markets are complex, adaptive systems subject to unforeseen events, structural breaks, and regime changes. As such, no outcome is guaranteed, and past performance or model accuracy does not imply future results.
-								<br>
-								<strong>Assumptions and Data Limitations:</strong> The analysis relies on historical data, model assumptions, and external data sources that may contain inaccuracies, delays, or revisions. While reasonable efforts are made to ensure data quality and methodological rigor, no representation or warranty is made regarding completeness or accuracy.
-								<br>
-								<strong>User Responsibility:</strong> Any decisions made based on this information are the sole responsibility of the user. Users are encouraged to conduct their own independent research and, where appropriate, consult with licensed financial professionals before making investment decisions.
-								<br>
-								<strong>No Liability:</strong> Under no circumstances shall the author or provider of this content be liable for any direct or indirect losses, damages, or consequences arising from the use of, or reliance on, any information presented in this project, including but not limited to financial losses.
-								<br>
-								<strong>No Fiduciary Relationship:</strong> Use of this content does not establish any fiduciary, advisory, or client relationship between the user and the content provider.
-								<br>
-								<strong>Forward-Looking Statements:</strong> Some content may include forward-looking statements or projections. These are based on current expectations and are subject to change without notice. Actual outcomes may differ materially.
-								<br>
-								<strong>Jurisdiction:</strong> This content is intended for a general audience and may not comply with specific regulatory requirements in all jurisdictions. Users are responsible for ensuring compliance with their local laws and regulations.
-								<br>
-								By accessing or purchasing any content from this project, you acknowledge and agree to the terms outlined in this statement. 
-								</p>
-				        	</div>
-						</div>
-					</div>
-				</section>
+	<h1 class="text-component instance-3" id="text03">Quant Studio</h1>
 	
-				<section id="contact-section">
-					<div id="container05" class="container-component instance-5 default">
-						<div class="wrapper">
-							<div class="inner">
-								<ul id="buttons05" class="buttons-component instance-5">
-									<li><a href="#home" class="n01" role="button">← Back</a></li>
-								</ul><h2 id="text01" class="text-component instance-1">Contact Us</h2>
-								<hr>
-								<p id="text06" class="text-component instance-6">
-									  Research questions. Purchase issues.<br>
-									  Institutional and consulting inquiries.<br>
-									  Custom report requests.<br>
-								</p>
+	<p class="text-component instance-4">AI-augmented quant finance consulting<br>research & techology</p>
 
-								<div class="footer-socials">
-						         <!--    <a href="https://github.com/CatalaniCD/" target="_blank" class="footer-icon">
-						                <i class="fab fa-github"></i>
-						            </a> -->
-									<a href="mailto:catalaniclaudiodamian@gmail.com" class="footer-icon" aria-label="Email Me">
-									    <i class="fa-solid fa-envelope"></i>
-									</a>
-						            <a href="https://www.linkedin.com/in/claudio-catalani-quant/" target="_blank" class="footer-icon">
-						                <i class="fab fa-linkedin"></i>
-						            </a>
-						            <a href="https://x.com/peritusmachina" target="_blank" class="footer-icon">
-									    <i class="fab fa-x-twitter"></i>
-									</a>
-						        </div>
-							</div>
-						</div>
-					</div>
-				</section>
+	<hr class="divider-component instance-2" id="divider02">
 
-				<!-- Concact Done Section -->
-				<section id="contact-done-section">
-					<div id="container02" class="container-component instance-2 default">
-						<div class="wrapper">
-							<div class="inner">
-								<h2 id="text02" class="text-component instance-2">Thank You</h2>
-								<p id="text08" class="text-component instance-8">Aliquam erat volutpat. Praesent urna nisi quam. Integer sollicitudin magna.</p>
-								<ul id="buttons01" class="buttons-component instance-1">
-									<li><a href="#contact" class="n01" role="button">← Back</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</section>
 
+	<div class="seg-pills">
+		<span class="pill quant"><span class="dot"></span>Quant Funds</span>
+		<span class="pill crypto"><span class="dot"></span>Crypto Traders</span>
+		<span class="pill prop"><span class="dot"></span>Prop Desks</span>
+		<span class="pill family"><span class="dot"></span>Family Offices</span>
+	</div>
+
+	<span class="text-component instance-6">
+		The gap between a strategy that looks good on paper and one that holds under live capital is structural. 
+		I find it. AI-augmented quantitative research and technology consulting for systematic funds, crypto 
+		operations, and prop desks — built on 10 years of live market execution, not theory.
+	</span>
+
+	<br>
+
+	<!-- Stats -->
+	<!-- <div class="stat-row">
+		<div class="stat-item">
+			<div class="stat-val">10+</div>
+			<div class="stat-lbl">Years live markets</div>
+		</div>
+		<div class="stat-item">
+			<div class="stat-val">$10M+</div>
+			<div class="stat-lbl">Fund AUM served</div>
+		</div>
+		<div class="stat-item">
+			<div class="stat-val">−34%</div>
+			<div class="stat-lbl">Max drawdown reduction</div>
+		</div>
+		<div class="stat-item">
+			<div class="stat-val">MIT · Oxford</div>
+			<div class="stat-lbl">Quant credentials</div>
+		</div>
+	</div> -->
+
+	<span class="p"><a href="https://calendly.com/catalaniclaudiodamian/30min" target="_blank">Book Assessment Call →</a></span>
+	<br>
+	<span class="p"><a href="#services">View Services →</a></span>
+
+</section>
+
+<!-- ═══════════════ WHO I WORK WITH ═══════════════ -->
+<section id="who-section">
+
+	<p class="section-eyebrow">Who I Work With</p>
+	<p class="text-component instance-5" id="text05">Four types of traders.<br>One common problem.</p>
+	<span class="text-component instance-6">Your strategy looks good on paper. The issue is whether it survives real capital, regime change, and live execution. That's what I test.</span>
+
+	<div class="who-grid">
+
+		<div class="who-card c1">
+			<div class="who-name">Startup Quant Funds</div>
+			<p class="who-desc">$1M–$50M AUM. Lean teams building systematic infrastructure. You've got strategies in backtest that haven't been stress-tested against live conditions.</p>
+			<ul class="who-pains">
+				<li>Overfitting in strategy selection</li>
+				<li>No out-of-sample validation framework</li>
+				<li>Backtest Sharpe vs live Sharpe diverging</li>
+				<li>Risk decomposition missing</li>
+			</ul>
+		</div>
+
+		<div class="who-card c2">
+			<div class="who-name">Crypto Traders &amp; Funds</div>
+			<p class="who-desc">Discretionary or systematic. Trading BTC, ETH, alts — dealing with regime shifts, volatility clustering, and exchange-specific execution gaps.</p>
+			<ul class="who-pains">
+				<li>Backtest ignores funding rates &amp; slippage</li>
+				<li>Strategy breaks during regime shift</li>
+				<li>High drawdown relative to returns</li>
+				<li>No ML-based signal enhancement</li>
+			</ul>
+		</div>
+
+		<div class="who-card c3">
+			<div class="who-name">Prop Desks</div>
+			<p class="who-desc">Speed-first teams running equity, futures, or crypto. You need fast turnarounds, actionable findings, and zero fluff in the output.</p>
+			<ul class="who-pains">
+				<li>Execution gaps eating strategy edge</li>
+				<li>High-turnover models degrading live</li>
+				<li>No systematic risk governance</li>
+				<li>ML models overfitting to noise</li>
+			</ul>
+		</div>
+
+		<div class="who-card c4">
+			<div class="who-name">Family Offices</div>
+			<p class="who-desc">Quant-grade oversight without a full-time hire. Risk modeling, portfolio stress-testing, and AI-integrated monitoring on a fractional basis.</p>
+			<ul class="who-pains">
+				<li>No in-house quant capability</li>
+				<li>Allocation decisions not statistically grounded</li>
+				<li>Risk models outdated or absent</li>
+				<li>Vendor tools lack customization</li>
+			</ul>
+		</div>
+
+	</div>
+
+</section>
+
+<!-- ═══════════════ SERVICES ═══════════════ -->
+<section id="services-section">
+	<p class="section-eyebrow">Services</p>
+	<p class="text-component instance-5" id="text05">Structured engagements, measurable outcomes.</p>
+	<span class="text-component instance-6">Every engagement is scoped, deliverable-based, and focused on statistical robustness. Maximum 3 active clients at any time.</span>
+
+	<!-- Tier 1 -->
+	<!-- <div class="svc-grid">
+		<div class="svc-card">
+			<div class="svc-tier">Research * Infrastructure * CustomApps</div>
+			<div class="svc-name">Quantitative Finance Consulting</div>
+			<div class="svc-price">$100 USD/Hour</div>
+			<div class="svc-time">Contra.com</div>
+			<div class="svc-segs">
+				<span class="svc-seg gd">Quant funds</span>
+				<span class="svc-seg cy">Crypto traders</span>
+				<span class="svc-seg gr">Prop desks</span>
+				<span class="svc-seg">Family offices</span>
 			</div>
+			<p class="svc-body">A fast, high-impact quantitative assessment of your trading approach. I identify structural weaknesses, measure statistical robustness, and deliver a concrete optimization roadmap. Works across equities, crypto, futures, and multi-asset portfolios.</p>
+			<ul class="svc-list">
+				<li>Statistical evaluation (Sharpe, Sortino, MDD, volatility)</li>
+				<li>Overfitting risk &amp; curve-fitting detection</li>
+				<li>Risk decomposition by factor and regime</li>
+				<li>Crypto: slippage, funding rate &amp; execution gap analysis</li>
+				<li>ML feature enhancement suggestions</li>
+				<li>60-minute strategy review call</li>
+				<li>Structured PDF report + action plan</li>
+				<li>NDA-ready · ACH / SWIFT / USDC</li>
+			</ul>
+			</ul>
 		</div>
 	</div>
-	<script src="script.js"></script>
+	<br>
+	<p class="text-component instance-5" id="text05">Tier Structured engagements</p> -->
+	
+
+	<div class="svc-grid">
+		<!-- Tier 1 -->
+		<div class="svc-card">
+			<div class="svc-tier">Tier 01 — Entry point</div>
+			<div class="svc-name">Diagnostic / Onboarding</div>
+			<div class="svc-price">$1,500 USD</div>
+			<div class="svc-time">50% upfront · 5–7 day delivery</div>
+			<div class="svc-segs">
+				<span class="svc-seg gd">Quant funds</span>
+				<span class="svc-seg cy">Crypto traders</span>
+				<span class="svc-seg gr">Prop desks</span>
+			</div>
+			<p class="svc-body">A fast, high-impact quantitative assessment of your trading approach. I identify structural weaknesses, measure statistical robustness, and deliver a concrete optimization roadmap. Works across equities, crypto, futures, and multi-asset portfolios.</p>
+			<ul class="svc-list">
+				<li>Statistical evaluation (Sharpe, Sortino, MDD, volatility)</li>
+				<li>Overfitting risk &amp; curve-fitting detection</li>
+				<li>Risk decomposition by factor and regime</li>
+				<li>Crypto: slippage, funding rate &amp; execution gap analysis</li>
+				<li>ML feature enhancement suggestions</li>
+				<li>60-minute strategy review call</li>
+				<li>Structured PDF report + action plan</li>
+				<li>NDA-ready · ACH / SWIFT / USDC</li>
+			</ul>
+			</ul>
+		</div>
+
+		<!-- Tier 2 -->
+		<div class="svc-card feat">
+			<div class="svc-tier">Tier 02 — Build <span class="svc-badge-pop">Most popular</span></div>
+			<div class="svc-name">Process Optimization</div>
+			<div class="svc-price">$4,000 – $8,000 USD</div>
+			<div class="svc-time">2–4 week engagement</div>
+			<div class="svc-segs">
+				<span class="svc-seg gd">Quant funds</span>
+				<span class="svc-seg cy">Crypto funds</span>
+			</div>
+			<p class="svc-body">Full implementation of dianostic findings. I redesign or rebuild the components of your system producing statistical drag — from feature engineering to risk architecture. Includes code delivery and performance validation framework. Crypto variant includes exchange-specific execution modeling.</p>
+			<ul class="svc-list">
+				<li>All Tier 1 deliverables included</li>
+				<li>Feature engineering improvements</li>
+				<li>ML model integration (XGBoost, LSTM, ensemble)</li>
+				<li>WFO backtest validation framework</li>
+				<li>Risk module redesign</li>
+				<li>Code refactoring &amp; delivery (Python)</li>
+				<li>Performance monitoring setup</li>
+				<li>NDA-ready · ACH / SWIFT / USDC</li>
+			</ul>
+			</ul>
+		</div>
+
+		<!-- Tier 3 -->
+		<div class="svc-card">
+			<div class="svc-tier">Tier 03 — Ongoing</div>
+			<div class="svc-name">Quant Advisory</div>
+			<div class="svc-price">$2,500 – $8,000 / month</div>
+			<div class="svc-time">Monthly retainer</div>
+			<div class="svc-segs">
+				<span class="svc-seg gd">Funds</span>
+				<span class="svc-seg">Family offices</span>
+			</div>
+			<p class="svc-body">Fractional quant advisor for funds needing ongoing statistical oversight without a full-time hire. Monthly reviews, continuous AI research integration, and real-time regime monitoring structured around your existing operations.</p>
+			<ul class="svc-list">
+				<li>Monthly system performance review</li>
+				<li>Performance diagnostics report</li>
+				<li>AI / ML research integration</li>
+				<li>Strategy refinement recommendations</li>
+				<li>Market regime monitoring &amp; alerts</li>
+				<li>Priority async availability</li>
+				<li>NDA-ready · ACH / SWIFT / USDC</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="note-box">
+		All engagements begin with a no-obligation 30-min discovery call. I do not sell signals, manage speculative portfolios, or run mass-subscription products. Maximum 3 concurrent clients.
+		<br><br><a href="#contact">Start with a call →</a>
+	</div>
+
+</section>
+
+<!-- ═══════════════ ABOUT ═══════════════ -->
+<section id="about-section">
+
+	<p class="section-eyebrow">About</p>
+
+	<div class="image-component instance-1 instance-hero" id="image01">
+		<span class="frame">
+			<img alt="Claudio Catalani" src="profile.png">
+		</span>
+	</div>
+
+	<h1 class="text-component instance-10" id="text03">Claudio Catalani</h1>
+
+	<hr class="divider-component instance-2" id="divider02">
+
+	<p class="text-component instance-5" id="text05">Built on discipline, validated in markets.</p>
+
+	<p class="text-component instance-6" id="text06">
+		<span class="p">I believe trading should be systematic, measurable, and statistically validated. Markets reward structure, not optimism. My work focuses on helping traders transform fragile strategies into robust quantitative systems that survive regime shifts and capital scaling.</span>
+		<span class="p">Before quantitative finance, I served as a Deck and Weapons Officer in the Argentine Navy — where precision, resilience, and methodical execution under pressure weren't optional. That operational foundation shapes every engagement.</span>
+	</p>
+
+	<hr class="divider-component instance-2">
+
+	<!-- Exact Position Academic Stripe -->
+	<div class="institution-stripe">
+	    <div class="institution-track">
+	        
+	        <!-- Positioned at 25% -->
+	        <div class="logo-positioner pos-25 oxford-logo">
+	            <img src="https://www.svgrepo.com/show/74225/university-of-oxford-badge-logo.svg" alt="University of Oxford Logo" />
+	        </div>
+
+	        <!-- Positioned at 50% (True Center) -->
+	        <div class="logo-positioner pos-50 mit-logo">
+	            <img src="https://brand.mit.edu/sites/default/files/2023-08/MIT-logo-downloads.png" alt="MIT Logo" />
+	        </div>
+
+	        <!-- Positioned at 75% -->
+	        <div class="logo-positioner pos-75 ucsd-logo">
+	            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/University_of_California%2C_San_Diego_logo.svg/3840px-University_of_California%2C_San_Diego_logo.svg.png" alt="UC San Diego Logo" />
+	        </div>
+
+	    </div>
+	</div>
+
+	<hr class="divider-component instance-2">
+
+	<p class="text-component instance-5">Quant Stack</p>
+
+	<!-- Minimalist Tech Stripe Container -->
+	<div class="tech-stripe-container">
+	    <div class="tech-stripe-grid">
+	        <!-- Theoretical & Pricing Foundations -->
+	        <span class="tech-badge">Asset Pricing</span>
+	        <span class="tech-badge">Arbitrage Pricing Theory</span>
+	        <span class="tech-badge">Capital Asset Pricing Model</span>
+	        <span class="tech-badge">Derivatives Pricing (Black-Scholes)</span>
+	        <span class="tech-badge">Modern Portfolio Theory</span>
+	        <span class="tech-badge">Black-Litterman</span>
+
+	        
+	        <!-- Statistical & Predictive modelling -->
+	        <span class="tech-badge">Probabilistic Modelling</span>
+	        <span class="tech-badge">Stochastic Processes</span>
+	        <span class="tech-badge">Montecarlo</span>
+	        <span class="tech-badge">Machine Learning for Finance</span>
+	        <span class="tech-badge">Factor Modelling</span>
+	        <span class="tech-badge">Time-Series Modelling</span>
+
+	        <!-- Pattern & Behavioral Analysis -->
+	        <span class="tech-badge">Behavioral Finance</span>
+	        <span class="tech-badge">Systematic Trading</span>
+	        <span class="tech-badge">Portfolio Optimization</span>
+	        <span class="tech-badge">Index Construction</span>
+	        
+
+	        <!-- Verification and Execution Frameworks -->
+	        <span class="tech-badge">Algorithmic Trading</span>
+	        <span class="tech-badge">Backtesting</span>
+
+	    </div>
+	</div>
+
+	<hr class="divider-component instance-2">
+
+	<p class="text-component instance-5">Technical Stack</p>
+
+	<!-- Minimalist Tech Stripe Container -->
+	<div class="tech-stripe-container">
+	    <div class="tech-stripe-grid">
+	        <!-- ML & Scientific Computing -->
+	        <span class="tech-badge">AI-Fluency Framework</span>
+	        <span class="tech-badge">Python</span>
+	        <span class="tech-badge">Flask</span>
+	        <span class="tech-badge">FastApi</span>
+	        <span class="tech-badge">Streamlit</span>
+	        <span class="tech-badge">Dash</span>
+	        <span class="tech-badge">Plotly</span>
+	        <span class="tech-badge">Matplotlib</span>
+	        <span class="tech-badge">NumPy</span>
+	        <span class="tech-badge">Pandas</span>
+	        <span class="tech-badge">Scikit-Learn</span>
+	        <span class="tech-badge">Keras</span>
+	        <span class="tech-badge">PyTorch</span>
+	        <span class="tech-badge">Backtesting.py</span>
+	        <!-- Web Infra -->
+	        <span class="tech-badge">JavaScript</span>
+	        <span class="tech-badge">Node.JS</span>
+	        <span class="tech-badge">Express.JS</span>
+	        <span class="tech-badge">Fastify.JS</span>
+	        <!-- Fintech Live Execution -->
+	        <span class="tech-badge">IBKR API</span>
+	        <span class="tech-badge">Crypto Exchanges APIs</span>
+	        <span class="tech-badge">Kalshi API</span>
+	        <span class="tech-badge">Polymarket API</span>
+	        <span class="tech-badge">TradingView</span>
+	        <span class="tech-badge">Pinescript</span>
+	        <!-- Data Feeds -->
+	        <span class="tech-badge">Polygon.io</span>
+	        <span class="tech-badge">Glassnode</span>
+	        <!-- Base Platform Infra -->
+	        <span class="tech-badge">Docker</span>
+	        <span class="tech-badge">PostgreSQL</span>
+	        <span class="tech-badge">SQLite</span>
+	        <span class="tech-badge">Cloudflare</span>
+	        <span class="tech-badge">Railway</span>
+
+	    </div>
+	</div>
+
+	<hr class="divider-component instance-2">
+
+	<p class="text-component instance-5">Selected Credentials</p>
+
+	<p class="text-component instance-6">
+		<span class="p">
+			<details>
+				<summary class="text-component instance-4">Fintech &amp; Quantitative Finance</summary>
+				<br>
+				<a href="https://oxford.credential.getsmarter.com/03bca522-8ae5-49ee-bacf-b1d270b1572c" target="_blank" rel="noopener">Oxford: Algorithmic Trading Programme</a><br>
+				<a href="https://courses.edx.org/certificates/95c490b2889f4967aa704c36360ad14b" target="_blank" rel="noopener">MIT 15.455x: Mathematical Methods for Quantitative Finance</a><br>
+				<a href="https://courses.edx.org/certificates/aab2491224e049f091d730e0cc55da71" target="_blank" rel="noopener">MIT 15.415.1x: Theory of Modern Finance I</a><br>
+				<a href="https://courses.edx.org/certificates/79ec2c772f0c45a1ac565cf0eb3553cc" target="_blank" rel="noopener">MIT 15.415.2x: Theory of Modern Finance II</a><br>
+				<a href="https://courses.edx.org/certificates/d103b21619db422c98ada4f21a1663bd" target="_blank" rel="noopener">MIT 6.86x: Machine Learning with Python</a><br>
+				<a href="https://courses.edx.org/certificates/8bb195a060f7443e85b1c21b447bdc7b" target="_blank" rel="noopener">MIT 6.431x: Probability - The Science of Data and Uncertainty</a><br>
+				<a href="https://courses.edx.org/certificates/954fcd5a9dba4339bdba1c3602cdb35f" target="_blank" rel="noopener">BAI003x: Reinforcement Learning</a><br>
+				<a href="https://courses.edx.org/certificates/8251ab56baf74752a54aedef42f896ca" target="_blank" rel="noopener">ETFM2016x: Electronic Trading in Financial Markets</a><br>
+				<a href="https://courses.edx.org/certificates/56884eed349043acbdab1aff8427eaa9" target="_blank" rel="noopener">CS198.1x: Bitcoin and Cryptocurrencies</a>
+			</details>
+		</span>
+		<span class="p">
+			<details>
+				<summary class="text-component instance-4">Computer Science</summary>
+				<br>
+				<a href="https://verify.skilljar.com/c/sk6tqfk65qzj" target="_blank" rel="noopener">Anthropic Academy: Al Fluency Framework & Foundations</a><br>
+				<a href="https://courses.edx.org/certificates/15956df7497a4455825b60a6126267c6" target="_blank" rel="noopener">6.00.1x: Introduction to CS and Programming (Python)</a><br>
+				<a href="https://courses.edx.org/certificates/2d96356d31074da29ffa0c5fc3eb193c" target="_blank" rel="noopener">6.00.2x: Computational Thinking and Data Science</a><br>
+				<a href="https://courses.edx.org/certificates/df723fdc9e594a258896450cc1c084fe" target="_blank" rel="noopener">ALGS200x: Algorithmic Design and Techniques</a><br>
+				<a href="https://courses.edx.org/certificates/a01572f3ebb2406abfec3e9f030240dc" target="_blank" rel="noopener">ALGS201x: Data Structures Fundamentals</a><br>
+				<a href="https://courses.edx.org/certificates/8e4c59e53b9342eea5958b1751ec8ef1" target="_blank" rel="noopener">ALGS202x: Graph Algorithms</a><br>
+				<a href="https://courses.edx.org/certificates/a7a7dcf6432d4ba1b9afb3fe34ca7855" target="_blank" rel="noopener">ALGS203x: Algorithms for NP-complete Problems</a><br>
+				<a href="https://courses.edx.org/certificates/b5d51866efd54a328d28226fc32411e9" target="_blank" rel="noopener">NET04x: Advanced Algorithmics and Graph Theory</a><br>
+				<a href="https://badges.parchment.com/public/assertions/Lp_1kREKRyasrVTSwW6FQg?identity__email=catalaniclaudiodamian@gmail.com" target="_blank" rel="noopener">CSE 330: Operating Systems</a>
+			</details>
+		</span>
+	</p>
+
+</section>
+
+<!-- ═══════════════ CONTACT ═══════════════ -->
+<section id="contact-section">
+
+	<p class="section-eyebrow">Contact</p>
+	<p class="text-component instance-5" id="text05">Start with an assessment call.</p>
+
+
+	<p class="text-component instance-6" id="text07">
+		If you're serious about strengthening your trading system, book a 30-minute discovery call. We'll review your current strategy structure, risk profile, and objectives — no obligation, no sales pitch. Works for all segments: quant funds, crypto traders, prop desks, family offices.
+	</p>
+
+	<hr class="divider-component instance-2">
+
+	<span class="p"><a href="https://calendly.com/catalaniclaudiodamian/30min" target="_blank">Book Assessment Call →</a></span>
+
+	<!-- Calendly -->
+	<!-- <div class="calendly-inline-widget" data-url="https://calendly.com/catalaniclaudiodamian" style="min-width:320px;height:700px;"></div>
+	<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+ -->
+	<hr class="divider-component instance-2">
+
+	<div class="cdet">
+		<div class="cdet-row">
+			<span class="cdet-key">Location</span>
+			<span class="cdet-val">Argentina · Remote-first · Global clients</span>
+		</div>
+		<div class="cdet-row">
+			<span class="cdet-key">Timezone</span>
+			<span class="cdet-val">ART (UTC−3) · Flexible for US / EU / Asia</span>
+		</div>
+		<div class="cdet-row">
+			<span class="cdet-key">Email</span>
+			<span class="cdet-val">catalaniclaudiodamian@gmail.com</span>
+		</div>
+		<div class="cdet-row">
+			<span class="cdet-key">Response</span>
+			<span class="cdet-val">Within 24 hours on business days</span>
+		</div>
+		<div class="cdet-row">
+			<span class="cdet-key">Payment</span>
+			<span class="cdet-val">ACH · SWIFT · USDC · NDA-ready</span>
+		</div>
+		<div class="cdet-row">
+			<span class="cdet-key">Capacity</span>
+			<span class="cdet-val">Max 3 concurrent engagements · Currently accepting</span>
+		</div>
+	</div>
+
+	<!-- Social icons -->
+
+
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer id="footer">
+	<hr class="divider-component instance-3">
+		<ul class="footer-socials">
+            <!-- <a href="https://github.com/CatalaniCD/" target="_blank" class="footer-icon">
+                <i class="fab fa-github"></i>
+            </a> -->
+			<a href="https://contra.com/claudio_catalani_quant/about?r=claudio_catalani_quant" target="_blank" class="footer-icon" aria-label="Contra">
+    			<i class="fa-solid fa-briefcase"></i>
+			</a>
+            <a href="https://www.linkedin.com/in/claudio-catalani-quant/" target="_blank" class="footer-icon">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://x.com/peritusmachina" target="_blank" class="footer-icon">
+			    <i class="fab fa-x-twitter"></i>
+			</a>
+			<!-- <a href="https://calendly.com/catalaniclaudiodamian/30min" target="_blank" class="footer-icon" aria-label="Calendly">
+			    <i class="fa-solid fa-calendar-check"></i>
+			</a> -->
+		</ul>
+	<p class="text-component instance-4" style="font-size:0.5em;color: #474747;letter-spacing:0.15rem;">
+		© 2025 · Claudio Catalani · Argentina · Remote · All rights reserved
+	</p>
+</footer>
+
+</div><!-- .inner -->
+</div><!-- .site-main -->
+</div><!-- .site-wrapper -->
+
+<!-- Original site script -->
+<script src="script.js"></script>
+
 </body>
 </html>
